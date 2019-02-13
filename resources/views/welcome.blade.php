@@ -1,16 +1,11 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fi">
 
-@include('head')
+@include('header/head')
 
 <body>
-
-
-    <body>
-            @include('navigaatio.navbar')
-            @include('lorem')
-
-     </body>
+    @include('navigaatio/navbar')
+    @include('lorem')
 </body>
 
 </html>

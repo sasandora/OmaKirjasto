@@ -1,5 +1,4 @@
 <div class="jumbotron" style="background-color: transparent;">
-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam neque augue, cursus nec orci sed, fringilla laoreet
     libero. Phasellus at mi volutpat neque elementum accumsan. Integer feugiat odio vel dolor congue tincidunt. Vivamus
     pretium tincidunt arcu id laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper mi
@@ -30,4 +29,5 @@
     consequat nisi tempor. Donec id justo sit amet turpis fringilla lobortis vel sit amet est. Nunc pellentesque in
     ante ut iaculis. Maecenas id scelerisque lectus, vulputate iaculis lorem. Suspendisse consequat consequat odio,
     eget placerat neque volutpat a. Ut nulla nibh, sodales a laoreet ut, laoreet eu est. Vestibulum condimentum purus
-    id hendrerit consequat. </div>
+    id hendrerit consequat.
+</div>
