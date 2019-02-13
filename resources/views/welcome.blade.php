@@ -7,7 +7,7 @@
 
 
     <body>
-            @include('navbar')
+            @include('navigaatio.navbar')
             @include('lorem')
 
      </body>
