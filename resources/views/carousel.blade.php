@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="MultiCarousel" data-items="1,3,5,6" data-slide="3" id="MultiCarousel"  data-interval="1000">
-            <div class="MultiCarousel-inner">
+            <div class="MultiCarousel-inner" style="Margin-top: 3em;">
                 <div class="item">
                     <div class="pad15">
                     <p>Lisää uusi kirja</p>
