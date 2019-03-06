@@ -6,28 +6,7 @@
                     <div class="pad15">
                     <p>Lisää uusi kirja</p>
                     <p>sarjaan</p>
-                    <img width="80%" src="https://image.flaticon.com/icons/svg/54/54908.svg">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                    <p>Tarzan</p>
-                    <p>1993</p>
-                    <img width="80%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                    <p>Tarzan</p>
-                    <p>1993</p>
-                    <img width="70%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                    <p>Tarzan</p>
-                    <p>1993</p>
-                    <img width="90%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
+                    <img width="85%" src="https://image.flaticon.com/icons/svg/54/54908.svg">
                     </div>
                 </div>
                 <div class="item">
@@ -41,14 +20,35 @@
                     <div class="pad15">
                     <p>Tarzan</p>
                     <p>1993</p>
-                    <img width="75%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
+                    <img width="85%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
                     <p>Tarzan</p>
                     <p>1993</p>
-                    <img width="100%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
+                    <img width="85%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pad15">
+                    <p>Tarzan</p>
+                    <p>1993</p>
+                    <img width="85%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pad15">
+                    <p>Tarzan</p>
+                    <p>1993</p>
+                    <img width="85%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pad15">
+                    <p>Tarzan</p>
+                    <p>1993</p>
+                    <img width="85%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
                     </div>
                 </div>
             </div>
