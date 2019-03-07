@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('sivut/welcome');
+});
+
+Route::get('kirjat', function () {
+    return 'moi';
 });
