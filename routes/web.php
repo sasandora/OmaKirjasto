@@ -16,5 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('kirjat', function () {
-    return 'moi';
+    return view('sivut/kirjat');
+});
+
+Route::get('tilaukset', function () {
+    return view('sivut/tilaukset');
 });

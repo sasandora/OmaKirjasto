@@ -6,17 +6,17 @@
                 <div class="row ">
                     <div class="col d-flex justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::path('sivut/welcome') ? 'active' : '' }}" href="index.php">Etusivu </a>
+                            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="index.php">Etusivu </a>
                         </li>
                     </div>
                     <div class="col">
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::path('sivut/kirjat') ? 'active' : '' }}" href="kirjat">Kirjat</a>
+                            <a class="nav-link {{ Request::is('kirjat') ? 'active' : '' }}" href="kirjat">Kirjat</a>
                         </li>
                     </div>
                     <div class="col">
                         <li class="nav-item">
-                            <a class="nav-link " href="#"> Tilaukset
+                            <a class="nav-link {{ Request::is('tilaukset') ? 'active' : '' }}" href="tilaukset"> Tilaukset
                             </a>
                         </li>
                     </div>
