@@ -1,11 +1,16 @@
-<div class="container">
-    <div class="row">
-        <div class="MultiCarousel" data-items="3,5,7,9" data-slide="3" id="MultiCarousel" data-interval="1000">
-            <div class="MultiCarousel-inner" style="Margin-top: 3em;">
+<div class="container" style="Margin-top:4em;">
+    <div class="row" style="background:#666">
+        <div class="col-12">
+            <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#karuselli-1">
+                ▼ </button>
+        </div>
+    </div>
+    <div class="row collapse show" id="karuselli-1" style="background:rgb(138, 138, 138)">
+        <div class="MultiCarousel " data-items="3,5,7,9" data-slide="3" id="MultiCarousel " data-interval="1000">
+            <div class="MultiCarousel-inner">
                 <div class="item">
                     <div class="pad15">
-                        <p>Lisää uusi kirja</p>
-                        <p>sarjaan</p>
+                        <p>Lisää uusi kirja sarjaan</p>
                         <img width="85%" src="https://image.flaticon.com/icons/svg/54/54908.svg">
                     </div>
                 </div>
@@ -53,67 +58,89 @@
                 </div>
             </div>
             <button class="btn btn-primary leftLst">
-                <</button> <button class="btn btn-primary rightLst">>
+                < </button> <button class="btn btn-primary rightLst">>
             </button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <br /><br /><br />
-            <hr />
-            <p>Settings</p>
-            <p>Change data items for xs,sm,md and lg display items respectively. Ex:data-items="1,3,5,6"</p>
-            <p>Change data slide for slides per click Ex:data-slide="1"</p>
+
         </div>
     </div>
 </div>
-<style>
-    .MultiCarousel {
-        float: left;
-        overflow: hidden;
-        padding: 15px;
-        width: 100%;
-        position: relative;
-    }
 
-    .MultiCarousel .MultiCarousel-inner {
-        transition: 1s ease all;
-        float: left;
-    }
-
-    .MultiCarousel .MultiCarousel-inner .item {
-        float: left;
-    }
-
-    .MultiCarousel .MultiCarousel-inner .item>div {
-        text-align: center;
-        padding: 10px;
-        margin: 10px;
-        background: #f1f1f1;
-        color: #666;
-    }
-
-    .MultiCarousel .leftLst,
-    .MultiCarousel .rightLst {
-        position: absolute;
-        border-radius: 50%;
-        top: calc(50% - 20px);
-    }
-
-    .MultiCarousel .leftLst {
-        left: 0;
-    }
-
-    .MultiCarousel .rightLst {
-        right: 0;
-    }
-
-    .MultiCarousel .leftLst.over,
-    .MultiCarousel .rightLst.over {
-        pointer-events: none;
-        background: #ccc;
-    }
-</style>
+<div class="container">
+        <div class="row" style="background:#666">
+            <div class="col-12">
+                <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#karuselli-2">
+                    ▼ </button>
+            </div>
+        </div>
+        <div class="row collapse " id="karuselli-2" style="background:rgb(138, 138, 138)">
+            <div class="MultiCarousel " data-items="3,5,7,9" data-slide="3" id="MultiCarousel " data-interval="1000">
+                <div class="MultiCarousel-inner">
+                    <div class="item">
+                        <div class="pad15">
+                            <p>Lisää uusi kirja sarjaan</p>
+                            <img width="85%" src="https://image.flaticon.com/icons/svg/54/54908.svg">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p>Tarzan</p>
+                            <p>1993</p>
+                            <img width="85%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p>Tarzan</p>
+                            <p>1993</p>
+                            <img width="85%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p>Tarzan</p>
+                            <p>1993</p>
+                            <img width="85%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p>Tarzan</p>
+                            <p>1993</p>
+                            <img width="85%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p>Tarzan</p>
+                            <p>1993</p>
+                            <img width="85%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p>Tarzan</p>
+                            <p>1993</p>
+                            <img width="85%" src="https://image.flaticon.com/icons/svg/182/182321.svg">
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary leftLst">
+                    < </button> <button class="btn btn-primary rightLst">>
+                </button>
+    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <br /><br /><br />
+                <hr />
+                <p>Settings</p>
+                <p>Change data items for xs,sm,md and lg display items respectively. Ex:data-items="1,3,5,6"</p>
+                <p>Change data slide for slides per click Ex:data-slide="1"</p>
+            </div>
+        </div>
+    </div>
+    
 <script>
     $(document).ready(function () {
         var itemsMainDiv = ('.MultiCarousel');

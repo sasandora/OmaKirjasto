@@ -8,6 +8,7 @@
     @include('elementit/carousel')
 
     @include('elementit/lorem')
+
 </body>
 
 </html>
