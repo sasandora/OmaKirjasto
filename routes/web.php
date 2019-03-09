@@ -24,29 +24,29 @@ Route::get('tilaukset', function () {
 });
 
 Route::get('/kirjalisays', function () {
-    return view('kirjaLisaysForm');
+    return view('sivut/kirjaLisaysForm');
 });
 
 Route::get('/kirjoittajalisays', function () {
-    return view('kirjoittajaLisaysForm');
+    return view('sivut/kirjoittajaLisaysForm');
 });
 
 Route::get('/kustantajalisays', function () {
-    return view('kustantajaLisaysForm');
+    return view('sivut/kustantajaLisaysForm');
 });
 
 Route::get('/sarjalisays', function () {
-    return view('kirjasarjaLisaysForm');
+    return view('sivut/kirjasarjaLisaysForm');
 });
 
 Route::get('/toimittajalisays', function () {
-    return view('toimittajaLisaysForm');
+    return view('sivut/toimittajaLisaysForm');
 });
 
 Route::get('/tilauslisays', function () {
-    return view('tilausLisaysForm');
+    return view('sivut/tilausLisaysForm');
 });
 
 Route::get('/toimituspaikkalisays', function () {
-    return view('toimituspaikkaLisaysForm');
+    return view('sivut/toimituspaikkaLisaysForm');
 });
