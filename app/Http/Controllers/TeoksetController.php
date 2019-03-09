@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\teos;
+use App\Teos;
 
 class TeoksetController extends Controller
 {
