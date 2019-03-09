@@ -11,42 +11,30 @@
 |
 */
 
-Route::get('/', function () {
-    return view('sivut/welcome');
-});
-
-Route::get('kirjat', function () {
-    return view('sivut/kirjat');
-});
-
-Route::get('tilaukset', function () {
-    return view('sivut/tilaukset');
-});
+Route::view('/', 'sivut/welcome');
+Route::view('kirjat', 'sivut/welcome');
+Route::view('tilaukset', 'sivut/welcome');
 
 Route::get('/kirjalisays', function () {
     return view('sivut/kirjaLisaysForm');
 });
-
 Route::get('/kirjoittajalisays', function () {
     return view('sivut/kirjoittajaLisaysForm');
 });
-
 Route::get('/kustantajalisays', function () {
     return view('sivut/kustantajaLisaysForm');
 });
-
 Route::get('/sarjalisays', function () {
     return view('sivut/kirjasarjaLisaysForm');
 });
-
 Route::get('/toimittajalisays', function () {
     return view('sivut/toimittajaLisaysForm');
 });
-
 Route::get('/tilauslisays', function () {
     return view('sivut/tilausLisaysForm');
 });
-
 Route::get('/toimituspaikkalisays', function () {
     return view('sivut/toimituspaikkaLisaysForm');
 });
+
+Route::resource('teos', 'TeoksetController');
