@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="fi">
 
-@include('main/head')
+@include('runko/head')
 
 <body>
-    @include('main/navbar')
-    @include('elementit/carousel')
+    @include('runko/navbar')
+    @include('tayte/carousel')
 
-    @include('elementit/lorem')
-</body>
+    @include('tayte/lorem')
+    <script>var userObj = {!! $teos !!}
+    </script></body>
 
 </html>

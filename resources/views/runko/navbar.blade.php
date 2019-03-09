@@ -46,18 +46,17 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item ">
-                                <a class="nav-link {{ Route::is('about') ? 'active' : '' }}" href="index.php">Etusivu </a>
+                                <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="index.php">Etusivu </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Kirjat</a>
+                                <a class="nav-link {{ Request::is('kirjat') ? 'active' : '' }}" href="kirjat">Kirjat</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="#">Tilaukset</a>
+                                <a class="nav-link {{ Request::is('tilaukset') ? 'active' : '' }}" href="tilaukset">Tilaukset</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Kirjoittajat </a>
                             </li>
-
                     </div>
                 </div>
             </div>

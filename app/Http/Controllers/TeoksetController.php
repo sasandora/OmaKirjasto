@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\teos;
 
 class TeoksetController extends Controller
 {
@@ -13,7 +14,8 @@ class TeoksetController extends Controller
      */
     public function index()
     {
-        //
+        $teos = teos::all();
+        return view('sivut/kirjat', compact('teos'));
     }
 
     /**
