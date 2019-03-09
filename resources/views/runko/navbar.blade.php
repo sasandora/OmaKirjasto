@@ -42,7 +42,6 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
-
                 <div class="col d-flex ">
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
