@@ -11,7 +11,7 @@
                     </div>
                     <div class="col">
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('kirjat') ? 'active' : '' }}" href="kirjat">Kirjat</a>
+                            <a class="nav-link {{ Request::is('teos') ? 'active' : '' }}" href="teos">Kirjat</a>
                         </li>
                     </div>
                     <div class="col">
@@ -49,7 +49,7 @@
                                 <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="index.php">Etusivu </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('kirjat') ? 'active' : '' }}" href="kirjat">Kirjat</a>
+                                <a class="nav-link {{ Request::is('teos') ? 'active' : '' }}" href="teos">Kirjat</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ Request::is('tilaukset') ? 'active' : '' }}" href="tilaukset">Tilaukset</a>

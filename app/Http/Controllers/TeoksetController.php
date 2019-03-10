@@ -54,7 +54,7 @@ class TeoksetController extends Controller
         $teos->kuvittaja = $request->input('kuvittaja');
         $teos->save();
 
-        return redirect('/kirjat');
+        return redirect('/teos');
 
     }
 
