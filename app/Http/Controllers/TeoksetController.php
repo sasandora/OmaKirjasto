@@ -16,7 +16,7 @@ class TeoksetController extends Controller
     public function index()
     {
         //Näytetään kirjojen etusivu. Käydään siis kaikki kirjat.
-        $teos = teos::all();
+        $teos = Teos::all();
         return view('sivut/kirjat', compact('teos'));
     }
 
