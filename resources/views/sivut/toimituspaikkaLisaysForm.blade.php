@@ -4,10 +4,12 @@
 @include('header/head')
 
 <body>
-    @include('navigaatio/navbar')
-    @include('carousel')
 
-    @include('lorem')
+@include('navigaatio/navbar')
+@include('formit/toimituspaikkalisays')
+
+
+
 </body>
 
 </html>
