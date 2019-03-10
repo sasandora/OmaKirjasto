@@ -6,6 +6,7 @@
 <body>
 
 @include('runko/navbar')
+
 @include('formit/kirjalisays')
 
 

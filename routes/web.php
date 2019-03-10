@@ -12,7 +12,7 @@
 */
 
 Route::view('/', 'sivut/welcome');
-Route::view('kirjat', 'sivut/welcome');
+Route::view('kirjat', 'sivut/kirjat');
 Route::view('tilaukset', 'sivut/welcome');
 
 Route::get('/kirjalisays', function () {

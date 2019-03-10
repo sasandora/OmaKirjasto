@@ -15,11 +15,11 @@ class CreateTeosTable extends Migration
     {
         Schema::create('teos', function (Blueprint $table) {
             $table->increments('id');               //Pääavain
-            $table->integer('kirjoittaja-id')->nullable($value = true);	    //Vierasavain
-            $table->integer('kustantaja-id')->nullable($value = true);	    //Vierasavain
-            $table->string('alkupe-nimi')->nullable($value = true);	
-            $table->string('suomi-nimi')->nullable($value = true);	
-            $table->integer('painos')->nullable($value = true);	
+            $table->integer('kirjoittajaid')->nullable($value = true);	    //Vierasavain
+            $table->integer('kustantajaid')->nullable($value = true);	    //Vierasavain
+            $table->string('alkupenimi')->nullable($value = true);	
+            $table->string('suominimi')->nullable($value = true);	
+            $table->string('painos')->nullable($value = true);	
             $table->string('kunto')->nullable($value = true);	
             $table->string('tyyppi')->nullable($value = true);	
             $table->string('status')->nullable($value = true);	

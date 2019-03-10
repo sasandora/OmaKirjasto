@@ -5,10 +5,8 @@
 
 <body>
     @include('runko/navbar')
-    @include('tayte/carousel')
+    <p style="Margin-top: 3em;"><a href="/teos/create">Lisää kirja<a>
+                <p>
+</body>
 
-    @include('tayte/lorem')
-    <script>var userObj = {!! $teos !!}
-    </script></body>
-
-</html>
+</html> 

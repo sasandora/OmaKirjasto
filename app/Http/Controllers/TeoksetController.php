@@ -25,7 +25,7 @@ class TeoksetController extends Controller
      */
     public function create()
     {
-        //
+        return view('sivut/kirjaLisaysForm');
     }
 
     /**
@@ -36,7 +36,26 @@ class TeoksetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(
+            $request,
+            [
+                'alkupenimi' => 'required' // Jos alkupe-nimi ei ole täytetty, palataan takaisin sivulle ja näytetään virhe
+            ]
+        );
+        // Luo teos
+        $teos = new Teos;
+        $teos->suominimi = $request->input('suominimi');
+        $teos->alkupenimi = $request->input('alkupenimi');
+        $teos->kunto = $request->input('kunto');
+        $teos->tyyppi = $request->input('tyyppi');
+        $teos->status = $request->input('status');
+        $teos->hinta = $request->input('hinta');
+        $teos->suomentaja = $request->input('suomentaja');
+        $teos->kuvittaja = $request->input('kuvittaja');
+        $teos->save();
+
+        return redirect('/kirjat');
+
     }
 
     /**
