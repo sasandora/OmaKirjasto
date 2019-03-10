@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Teos;
+use PhpParser\Node\Expr\AssignOp\Concat;
 
 class TeoksetController extends Controller
 {
@@ -14,6 +15,7 @@ class TeoksetController extends Controller
      */
     public function index()
     {
+        //Näytetään kirjojen etusivu. Käydään siis kaikki kirjat.
         $teos = teos::all();
         return view('sivut/kirjat', compact('teos'));
     }
@@ -25,6 +27,7 @@ class TeoksetController extends Controller
      */
     public function create()
     {
+        //Näytetään sivu, jolla luodaan kirja
         return view('sivut/kirjaLisaysForm');
     }
 
@@ -54,8 +57,7 @@ class TeoksetController extends Controller
         $teos->kuvittaja = $request->input('kuvittaja');
         $teos->save();
 
-        return redirect('/teos');
-
+        return redirect('/teos')->with('alert-success', 'Kirja lisätty');;
     }
 
     /**
@@ -66,7 +68,9 @@ class TeoksetController extends Controller
      */
     public function show($id)
     {
-        //
+        //Käytetään yhden kirjan näyttämiseen
+        // $teos = Teos::find($id);
+        // return view('teos', compact('teos'));
     }
 
     /**
@@ -77,7 +81,9 @@ class TeoksetController extends Controller
      */
     public function edit($id)
     {
-        //
+        //Viedään kirja editoitavaksi formiin
+        $teos = Teos::find($id);
+        return view('sivut/teosMuokkausForm', compact('teos'));
     }
 
     /**
@@ -89,7 +95,26 @@ class TeoksetController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate(
+            $request,
+            [
+                'alkupenimi' => 'required' // Jos alkupe-nimi ei ole täytetty, palataan takaisin sivulle ja näytetään virhe
+            ]
+        );
+
+        // Muokataan teos, eli kirja
+        $teos = Teos::find($id);    //Ei luoda, vaan haetaan teos
+        $teos->suominimi = $request->input('suominimi');
+        $teos->alkupenimi = $request->input('alkupenimi');
+        $teos->kunto = $request->input('kunto');
+        $teos->tyyppi = $request->input('tyyppi');
+        $teos->status = $request->input('status');
+        $teos->hinta = $request->input('hinta');
+        $teos->suomentaja = $request->input('suomentaja');
+        $teos->kuvittaja = $request->input('kuvittaja');
+        $teos->save();
+
+        return redirect('/teos')->with('alert-success', 'Muokkaus tallennettu');;
     }
 
     /**
@@ -100,6 +125,9 @@ class TeoksetController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $teos = Teos::find($id);
+        $pkirja = $teos->suominimi;
+        $teos->delete();
+        return redirect('/teos')->with('alert-success', 'Kirja poistettu');
     }
 }

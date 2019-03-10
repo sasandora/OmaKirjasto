@@ -1,6 +1,12 @@
 body{
     background:rgb(138, 138, 138) !important;
 }
+
+a.card,
+a.card:hover {
+  color: #212529;
+  text-decoration: none;
+}
 .MultiCarousel {
     float: left;
     overflow: hidden;
