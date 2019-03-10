@@ -6,6 +6,11 @@ a.card,
 a.card:hover {
   color: #212529;
   text-decoration: none;
+  background: #646464;
+  color: rgb(218, 218, 218);
+  padding: 0em;
+  width: 100%;
+
 }
 .MultiCarousel {
     float: left;

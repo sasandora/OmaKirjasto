@@ -17,12 +17,12 @@
 
     @foreach ($teos->chunk(4) as $chunk)
     <div class="row">
-        @foreach ($chunk as $kirja)
-        <div class="col-3 ">
+        @foreach ($teos as $kirja)
+        <div class="col-sm-12 col-md-4 col-lg-4">
             <a href="/teos/{{$kirja->id}}/edit" class="card">
 
-                <h3>{{$kirja->suominimi}}</h3>
-                <h5>{{$kirja->alkupenimi}}</h5>
+                <h4>{{$kirja->suominimi}}</h3>
+                <h6>{{$kirja->alkupenimi}}</h5>
             </a>
 
         </div>
