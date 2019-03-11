@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\sarja;
+use App\teos;
+
 
 class SarjaController extends Controller
 {
@@ -13,7 +16,8 @@ class SarjaController extends Controller
      */
     public function index()
     {
-        //
+        $sarja = sarja::all();
+        return view('sivut/sarjat', compact('sarja'));
     }
 
     /**
@@ -23,7 +27,8 @@ class SarjaController extends Controller
      */
     public function create()
     {
-        //
+        //Näytetään sivu, jolla luodaan kirja
+        return view('sivut/sarjaLisaysForm');
     }
 
     /**
@@ -34,7 +39,19 @@ class SarjaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(
+            $request,
+            [
+                'nimi' => 'required' // Jos alkupe-nimi ei ole täytetty, palataan takaisin sivulle ja näytetään virhe
+            ]
+        );
+        // Luo sarja
+        $sarja = new sarja;
+        $sarja->nimi = $request->input('nimi');
+        $sarja->kuvaus = $request->input('kuvaus');
+        $sarja->save();
+
+        return redirect('/sarjat')->with('alert-success', 'Sarja lisätty');;
     }
 
     /**
@@ -56,7 +73,12 @@ class SarjaController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Viedään kirjat lisättäväksi  
+        $teos = Teos::all();
+        // Viedään sarja editoitavaksi formiin
+        $sarja = sarja::find($id);    
+
+        return view('sivut/sarjaMuokkausForm', compact('sarja','teos'));
     }
 
     /**
@@ -68,7 +90,26 @@ class SarjaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate(
+            $request,
+            [
+                'nimi' => 'required' // Jos alkupe-nimi ei ole täytetty, palataan takaisin sivulle ja näytetään virhe
+            ]
+        );
+        // Haetaan sarja
+        $sarja = sarja::find($id);    
+
+        $sarja->nimi = $request->input('nimi');
+        $sarja->kuvaus = $request->input('kuvaus');
+        
+        $sarja->save();
+
+        // Haetaan kirjat
+        $teos = Teos::find([1,2]);
+        // Tehdään merkintä kirjoista sarjassa pivot tauluun
+        $sarja->teos()->attach($teos);
+
+        return redirect('/sarjat')->with('alert-success', 'Kirjat lisätty');;
     }
 
     /**

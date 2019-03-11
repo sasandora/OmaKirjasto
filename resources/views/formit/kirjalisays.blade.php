@@ -23,13 +23,13 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Nimi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="suominimi" type="text" value="Taru sormusten herrasta">
+                        <input class="form-control" name="suominimi" type="text" value="Sormuksen Ritarit">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Alkuperäinen nimi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="alkupenimi" type="text" value="Lord of the rings">
+                        <input class="form-control" name="alkupenimi" type="text" value="The Fellowship of the Ring">
                     </div>
                 </div>
                 <div class="form-group row">
