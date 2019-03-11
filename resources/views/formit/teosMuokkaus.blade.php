@@ -15,21 +15,22 @@
     <!-- form kirja info -->
     <div class="card card-outline-secondary">
         <div class="card-header">
-            <h3 class="mb-0">Lisää kirja</h3>
+            <h3 class="mb-0">Muokkaa kirjaa</h3>
         </div>
         <div class="card-body">
-            <form action="{{ action('TeoksetController@store') }}" method="POST">
+            <form action="/teos/{{$teos->id}}" method="POST">
+                @method('PUT')
                 @csrf
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Nimi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="suominimi" type="text" value="Taru sormusten herrasta">
+                        <input class="form-control" name="suominimi" type="text" value="{{$teos->suominimi}}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Alkuperäinen nimi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="alkupenimi" type="text" value="Lord of the rings">
+                        <input class="form-control" name="alkupenimi" type="text" value="{{$teos->alkupenimi}}">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -87,19 +88,19 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Hinta (€)</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="hinta" type="text" value="10">
+                        <input class="form-control" name="hinta" type="text" value="{{$teos->hinta}}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Suomentaja</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="suomentaja" type="text" value="nimi">
+                        <input class="form-control" name="suomentaja" type="text" value="{{$teos->suomentaja}}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Julkaisuvuosi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="vuosi" type="text" value="vuosiluku">
+                        <input class="form-control" name="vuosi" type="text" value="{{$teos->vuosi}}">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -118,4 +119,25 @@
             </form>
         </div>
     </div>
-    <!-- /form kirja info --> 
+    <!-- /form kirja info -->
+    <div class="card card-outline-secondary">
+        <div class="card-header">
+            <div class="card-body">
+                <form action="/teos/{{$teos->id}}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <div class="col-lg-9">
+                        <input type="button" onclick="varmistus(form)" class="btn btn-danger" value="Poista" style="float:right">
+
+                        <script>
+                            function varmistus(form) {
+                                if (confirm("Haluatko varmasti poistaa kirjan {{$teos->suominimi}}?")) {
+                                    form.submit();
+                                }
+                            }
+                        </script>
+
+                    </div>
+                </form>
+            </div>
+        </div> 

@@ -3,6 +3,7 @@
         <div class="col-12">
             <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#karuselli-1">
                 ▼ </button>
+                Tarzan sarja
         </div>
     </div>
     <div class="row collapse show" id="karuselli-1" style="background:rgb(138, 138, 138)">
@@ -70,6 +71,7 @@
             <div class="col-12">
                 <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#karuselli-2">
                     ▼ </button>
+                    Tarzan sarja
             </div>
         </div>
         <div class="row collapse " id="karuselli-2" style="background:rgb(138, 138, 138)">

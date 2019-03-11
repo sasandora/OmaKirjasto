@@ -7,7 +7,7 @@
 
 @include('runko/navbar')
 
-@include('formit/kirjalisays')
+@include('formit/teosMuokkaus')
 
 
 
