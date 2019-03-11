@@ -38,3 +38,5 @@ Route::get('/toimituspaikkalisays', function () {
 
 //Reitittää kaikki CRUD-jutut kontrollerille kansioon app/http/controllers/teoksetcontroller.php
 Route::resource('teos', 'TeoksetController');
+
+Route::resource('sarja', 'SarjaController');

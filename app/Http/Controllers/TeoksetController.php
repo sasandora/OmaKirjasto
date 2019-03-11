@@ -126,7 +126,6 @@ class TeoksetController extends Controller
     public function destroy($id)
     {
         $teos = Teos::find($id);
-        $pkirja = $teos->suominimi;
         $teos->delete();
         return redirect('/teos')->with('alert-success', 'Kirja poistettu');
     }
