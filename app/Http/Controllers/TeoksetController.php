@@ -70,7 +70,7 @@ class TeoksetController extends Controller
     {
         //Käytetään yhden kirjan näyttämiseen
         // $teos = Teos::find($id);
-        // return view('teos', compact('teos'));
+        // return view('teosinfoasd', compact('teos'));
     }
 
     /**
