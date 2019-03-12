@@ -10,24 +10,25 @@
             <h3 class="mb-0">Lisää kirjasarja</h3>
         </div>
         <div class="card-body">
-            <form class="form" role="form" autocomplete="off">
+        <form action="{{ action('SarjaController@store') }}" method="POST">
+                @csrf
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Kirjasarjan nimi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="text" value="joko alkuperäinen tai suomennettu">
+                        <input class="form-control" name="nimi" type="text" value="joko alkuperäinen tai suomennettu">
                     </div>
                 </div>
                 <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Kirjasarjan kuvaus</label>
                         <div class="col-lg-9">
-                            <textarea class="form-control" rows="3" placeholder="Kirjoita kuvaus"></textarea>
+                            <textarea class="form-control" name="kuvaus" rows="3" placeholder="Kirjoita kuvaus"></textarea>
                         </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label"></label>
                     <div class="col-lg-9">
-                        <input type="button" class="btn btn-secondary" value="Tallenna">
-                        <input type="button" class="btn btn-primary" value="Peruuta">
+                        <input type="submit" class="btn btn-secondary" value="Tallenna">
+                        <input type="button" class="btn btn-primary" onclick="location.href='{{ url('teos') }}'" value="Peruuta">
                     </div>
                 </div>
             </form>

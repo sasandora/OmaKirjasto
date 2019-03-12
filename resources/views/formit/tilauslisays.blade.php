@@ -74,7 +74,7 @@
                     <label class="col-lg-3 col-form-label form-control-label"></label>
                     <div class="col-lg-9">
                         <input type="button" class="btn btn-secondary" value="Tallenna">
-                        <input type="button" class="btn btn-primary" value="Peruuta">
+                        <input type="button" class="btn btn-primary"  value="Peruuta">
                     </div>
                 </div>
             </form>

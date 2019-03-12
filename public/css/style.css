@@ -2,10 +2,12 @@ body{
     background:rgb(138, 138, 138) !important;
 }
 
+ol{
+    padding-left: 0em;
+}
 /*Tekee korteista klikattavia*/
 a.card,
 a.card:hover {
-  color: #212529;
   text-decoration: none;
   background: #646464;
   color: rgb(218, 218, 218);
