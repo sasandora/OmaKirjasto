@@ -19,13 +19,14 @@
     <div class="row">
         @foreach ($teos as $kirja)
         <div class="col-sm-12 col-md-4 col-lg-4">
-            <a href="/teos/{{$kirja->id}}" class="card">
+            <a href="/teos/{{$kirja->id}}/" class="card">
 
                 <h4>{{$kirja->suominimi}}</h3>
                 <h6>{{$kirja->alkupenimi}}</h5>
-                <input class="btn btn-info"  onclick="{{ action('TeoksetController@update',$kirja->id) }}" value="Muokkaa">
 
             </a>
+            <input type="button" class="btn btn-info"  onclick="location.href='{{ action('TeoksetController@edit',$kirja->id) }}'" value="Muokkaa">
+            <input type="button" class="btn btn-secondary" onclick="location.href='{{ url('teos') }}'" value="Poista">
 
         </div>
         @endforeach

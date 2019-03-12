@@ -13,7 +13,7 @@
     </div>
     @endif
     <!-- form kirja info -->
-    <div class="card card-outline-secondary">
+    <div class="card">
         <div class="card-header">
             <h3 class="mb-0">Muokkaa kirjaa</h3>
         </div>
@@ -120,8 +120,8 @@
         </div>
     </div>
     <!-- /form kirja info -->
-    <div class="card card-outline-secondary">
-        <div class="card-header">
+    <div class="card ">
+        <div class="card-header>
             <div class="card-body">
                 <form action="/teos/{{$teos->id}}" method="POST">
                     @method('DELETE')
