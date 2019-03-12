@@ -35,6 +35,9 @@ Route::get('/tilauslisays', function () {
 Route::get('/toimituspaikkalisays', function () {
     return view('sivut/toimituspaikkaLisaysForm');
 });
+Route::get('/teosinfo', function () {
+    return view('sivut/teosinfoForm');
+});
 
 //Reitittää kaikki CRUD-jutut kontrollerille kansioon app/http/controllers/teoksetcontroller.php
 Route::resource('teos', 'TeoksetController');
