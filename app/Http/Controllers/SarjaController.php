@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\sarja;
 use App\teos;
+use Barryvdh\Debugbar\Facade as Debugbar;
+
 
 
 class SarjaController extends Controller
@@ -76,9 +78,9 @@ class SarjaController extends Controller
         // Viedään kirjat lisättäväksi  
         $teos = Teos::orderBy('suominimi')->get();
         // Viedään sarja editoitavaksi formiin
-        $sarja = sarja::find($id);    
+        $sarja = sarja::find($id);
 
-        return view('sivut/sarjaMuokkausForm', compact('sarja','teos'));
+        return view('sivut/sarjaMuokkausForm', compact('sarja', 'teos'));
     }
 
     /**
@@ -97,40 +99,15 @@ class SarjaController extends Controller
             ]
         );
         // Haetaan sarja
-        $sarja = sarja::find($id);    
+        $sarja = sarja::find($id);
 
         $sarja->nimi = $request->input('nimi');
         $sarja->kuvaus = $request->input('kuvaus');
-        
+
         $sarja->save();
 
         // Haetaan kirjat
-        $teos = Teos::find([1,2]);
-        // Tehdään merkintä kirjoista sarjassa pivot tauluun
-        $sarja->teos()->attach($teos);
-
-        return redirect('/sarjat')->with('alert-success', 'Kirjat lisätty');;
-    }
-    /**
-     * Lisää kirjat sarjaan.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function add(Request $request, $idSarja, $idTeos)
-    {
-        $this->validate(
-            $request,
-            [
-                'nimi' => 'required' // Jos alkupe-nimi ei ole täytetty, palataan takaisin sivulle ja näytetään virhe
-            ]
-        );
-        // Haetaan sarja
-        $sarja = sarja::find($idSarja);    
-
-        // Haetaan kirjat
-        $teos = Teos::find($idTeos);
+        $teos = Teos::findMany($request->teos);
         // Tehdään merkintä kirjoista sarjassa pivot tauluun
         $sarja->teos()->attach($teos);
 

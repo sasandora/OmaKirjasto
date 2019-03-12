@@ -1,19 +1,27 @@
-body{
-    background:rgb(138, 138, 138) !important;
+body {
+    background: rgb(138, 138, 138) !important;
 }
 
-ol{
+ol {
     padding-left: 0em;
 }
+
 /*Tekee korteista klikattavia*/
-a.card,
-a.card:hover {
-  text-decoration: none;
-  background: #646464;
-  color: rgb(218, 218, 218);
-  padding: 0em;
-  width: 100%;
+
+a.card, .card-body, .card, a.card:hover, .card-header {
+    text-decoration: none;
+    background-color: #646464 !important;
+    color: rgb(218, 218, 218);
+    padding: 0em;
+    width: 100%;
+    border: 1em !important;
 }
+
+.form-control {
+    background: rgb(241, 241, 241) !important;
+    color: black;
+}
+
 .MultiCarousel {
     float: left;
     overflow: hidden;
@@ -40,8 +48,7 @@ a.card:hover {
     line-height: 1em;
 }
 
-.MultiCarousel .leftLst,
-.MultiCarousel .rightLst {
+.MultiCarousel .leftLst, .MultiCarousel .rightLst {
     position: absolute;
     border-radius: 50%;
     top: calc(50% - 20px);
@@ -55,8 +62,7 @@ a.card:hover {
     right: 0;
 }
 
-.MultiCarousel .leftLst.over,
-.MultiCarousel .rightLst.over {
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over {
     pointer-events: none;
     background: #ccc;
 }
