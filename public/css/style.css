@@ -2,6 +2,9 @@ body{
     background:rgb(138, 138, 138) !important;
 }
 
+ol{
+    padding-left: 0em;
+}
 /*Tekee korteista klikattavia*/
 a.card,
 a.card:hover {

@@ -74,7 +74,7 @@ class SarjaController extends Controller
     public function edit($id)
     {
         // Viedään kirjat lisättäväksi  
-        $teos = Teos::all();
+        $teos = Teos::orderBy('suominimi')->get();
         // Viedään sarja editoitavaksi formiin
         $sarja = sarja::find($id);    
 
@@ -106,6 +106,31 @@ class SarjaController extends Controller
 
         // Haetaan kirjat
         $teos = Teos::find([1,2]);
+        // Tehdään merkintä kirjoista sarjassa pivot tauluun
+        $sarja->teos()->attach($teos);
+
+        return redirect('/sarjat')->with('alert-success', 'Kirjat lisätty');;
+    }
+    /**
+     * Lisää kirjat sarjaan.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function add(Request $request, $idSarja, $idTeos)
+    {
+        $this->validate(
+            $request,
+            [
+                'nimi' => 'required' // Jos alkupe-nimi ei ole täytetty, palataan takaisin sivulle ja näytetään virhe
+            ]
+        );
+        // Haetaan sarja
+        $sarja = sarja::find($idSarja);    
+
+        // Haetaan kirjat
+        $teos = Teos::find($idTeos);
         // Tehdään merkintä kirjoista sarjassa pivot tauluun
         $sarja->teos()->attach($teos);
 

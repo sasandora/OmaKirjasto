@@ -6,17 +6,22 @@
                 <div class="row ">
                     <div class="col d-flex justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="index.php">Etusivu </a>
+                            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ URL::to('/') }}">Etusivu </a>
                         </li>
                     </div>
                     <div class="col">
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('teos') ? 'active' : '' }}" href="teos">Kirjat</a>
+                            <a class="nav-link {{ Request::is('teos') ? 'active' : '' }}" href="{{ URL::to('/teos') }}">Kirjat</a>
                         </li>
                     </div>
                     <div class="col">
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('tilaukset') ? 'active' : '' }}" href="tilaukset"> Tilaukset
+                            <a class="nav-link {{ Request::is('sarjat') ? 'active' : '' }}" href="{{ URL::to('/sarjat') }}"> Sarjat</a>
+                        </li>
+                    </div>
+                    <div class="col">
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('tilaukset') ? 'active' : '' }}" href="{{ URL::to('/tilaukset') }}"> Tilaukset
                             </a>
                         </li>
                     </div>
@@ -25,7 +30,6 @@
                             <a class="nav-link" href="#">Kirjoittajat </a>
                         </li>
                     </div>
-
                 </div>
             </ul>
         </div>
@@ -46,13 +50,17 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item ">
-                                <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="index.php">Etusivu </a>
+                                <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ URL::to('/') }}">Etusivu </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('teos') ? 'active' : '' }}" href="teos">Kirjat</a>
+                                <a class="nav-link {{ Request::is('teos') ? 'active' : '' }}" href="{{ URL::to('/teos') }}">Kirjat</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('tilaukset') ? 'active' : '' }}" href="tilaukset">Tilaukset</a>
+                                <a class="nav-link {{ Request::is('sarjat') ? 'active' : '' }}" href="{{ URL::to('/sarjat') }}"> Sarjat</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link {{ Request::is('tilaukset') ? 'active' : '' }}" href="{{ URL::to('/tilaukset') }}"> Tilaukset</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Kirjoittajat </a>

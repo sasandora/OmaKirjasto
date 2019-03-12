@@ -1,6 +1,6 @@
 </div>
 <!--/col-->
-<div class="col-md-8 offset-md-2">
+<div class="col-md-10 offset-md-1">
     <span class="anchor" id="formSarjaLisays"></span>
     <hr class="my-5">
 
@@ -26,43 +26,37 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Kirjat</label>
-
+                    <label class="col-lg-3 col-form-label form-control-label">Kirjat
+                        <input type="button" class="btn btn-info" id="button" onclick="uusikirja()" value="+"></label>
                     <div class="col-lg-9">
-                        <input type="button" id="button" onclick="uusikirja()" value="+" >
-                    </div>
-                </div>
-                <div class=" form-group row">
                         <ol>
-
                         </ol>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label"></label>
-                        <div class="col-lg-9">
-                            <input type="submit" class="btn btn-secondary" value="Tallenna">
-                            <input type="button" class="btn btn-primary" value="Peruuta">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                    <div class="col-lg-9">
+                        <input type="submit" class="btn btn-secondary" value="Tallenna">
+                        <input type="button" onclick="location.href='{{ url('sarjat') }}'" class="btn btn-primary" value="Peruuta">
                     </div>
+                </div>
             </form>
         </div>
     </div>
 
     <script>
-
         function uusikirja() {
-            var kirjat = {!! $teos !!};
+            var kirjat = {!!$teos!!};
 
-        var selekti = '<li><select class="custom-select" id="inputGroupSelect01">';
+            var selekti = '<li><select class="custom-select" id="inputGroupSelect01">';
 
-        for (var y = 0; y < kirjat.length; y++) {
-            selekti += '<option value="' + kirjat[y].id + '">' + kirjat[y].suominimi + '</option>';
+            for (var y = 0; y < kirjat.length; y++) {
+                selekti += '<option value="' + kirjat[y].id + '">' + kirjat[y].suominimi + '</option>';
+            }
+            selekti += '</select></li>'
+
+            $("ol").prepend(selekti);
         }
-        selekti += '</select></li>'
-
-        $("ol").prepend(selekti);
-}
-
     </script>
 
-    <!-- /form kirjasarja info -->
+    <!-- /form kirjasarja info --> 
