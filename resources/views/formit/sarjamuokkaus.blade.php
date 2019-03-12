@@ -43,12 +43,15 @@
             </form>
         </div>
     </div>
+    <div id="numero" class="hidden"></div>
 
     <script>
-        function uusikirja() {
-            var kirjat = {!!$teos!!};
+    var kerta=0;
+    var kirjat = {!!$teos!!};
 
-            var selekti = '<li><select class="custom-select" id="inputGroupSelect01">';
+        function uusikirja() {
+            kerta++;
+            var selekti = '<li><select class="custom-select" name="teos[teos'+kerta+']" id="inputGroupSelect01">';
 
             for (var y = 0; y < kirjat.length; y++) {
                 selekti += '<option value="' + kirjat[y].id + '">' + kirjat[y].suominimi + '</option>';
