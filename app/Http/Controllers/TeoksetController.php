@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Teos;
-use PhpParser\Node\Expr\AssignOp\Concat;
 
 class TeoksetController extends Controller
 {
@@ -126,7 +125,6 @@ class TeoksetController extends Controller
     public function destroy($id)
     {
         $teos = Teos::find($id);
-        $pkirja = $teos->suominimi;
         $teos->delete();
         return redirect('/teos')->with('alert-success', 'Kirja poistettu');
     }
