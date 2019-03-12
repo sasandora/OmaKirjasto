@@ -68,8 +68,8 @@ class TeoksetController extends Controller
     public function show($id)
     {
         //Käytetään yhden kirjan näyttämiseen
-        // $teos = Teos::find($id);
-        // return view('teosinfoasd', compact('teos'));
+        $teos = Teos::find($id);
+        return view('sivut/teosinfo', compact('teos'));
     }
 
     /**

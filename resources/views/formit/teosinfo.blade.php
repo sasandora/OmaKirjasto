@@ -22,57 +22,57 @@
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Nimi:</label>
-                <label class="col-lg-3 col-form-label form-control-label">Taru Sormusten Herrasta</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->suominimi}}</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Alkuperäinen nimi:</label>
-                <label class="col-lg-3 col-form-label form-control-label">Lord of the Rings</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->alkupenimi}}</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Kirjoittaja:</label>
-                <label class="col-lg-3 col-form-label form-control-label">J.R.R. Tolkien</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->Kirjoittaja}}</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Kustantaja:</label>
-                <label class="col-lg-3 col-form-label form-control-label">Semic Oy</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->Kustantaja}}</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Kunto:</label>
-                <label class="col-lg-3 col-form-label form-control-label">Kuntoluokka 2</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->kuntoluokka}}</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Tyyppi:</label>
-                <label class="col-lg-3 col-form-label form-control-label">Sidottu</label>  
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->tyyppi}}</label>  
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Status:</label>
-                <label class="col-lg-3 col-form-label form-control-label">Omistettu</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->status}}</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Hinta (€):</label>
-                <label class="col-lg-3 col-form-label form-control-label">10€</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->hinta}}€</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Suomentaja:</label>
-                <label class="col-lg-3 col-form-label form-control-label">nimi</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->suomentaja}}</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Julkaisuvuosi:</label>
-                <label class="col-lg-3 col-form-label form-control-label">vuosiluku</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->vuosi}}</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Kuvittaja:</label>
-                <label class="col-lg-3 col-form-label form-control-label">kuvittaja</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->Kuvittaja}}</label>
             </div>
         </div>
     </div>

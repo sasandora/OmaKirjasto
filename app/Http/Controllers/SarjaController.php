@@ -106,9 +106,6 @@ class SarjaController extends Controller
 
         $sarja->save();
 
-        DebugBar::info($request);
-
-
         // Haetaan kirjat
         $teos = Teos::findMany($request->teos);
         // Tehdään merkintä kirjoista sarjassa pivot tauluun
