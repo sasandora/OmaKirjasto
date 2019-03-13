@@ -15,4 +15,4 @@ php artisan make:model teos -m //Luo teos taulun tietokantaan
 php artisan make:controller TeoksetController --resource //Luo kontrollerin funktiolla
 /app/http/controllers
 
-var userObj = {!! $teos !!} //Ottaa vastaan ja muuttaa jsoniksi
+var userObj = {!! $teos !!} //Ottaa vastaan ja muuttaa jsoniksi. Ei toimi muussa muodossa.
