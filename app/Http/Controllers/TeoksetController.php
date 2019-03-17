@@ -113,7 +113,7 @@ class TeoksetController extends Controller
         $teos->kuvittaja = $request->input('kuvittaja');
         $teos->save();
 
-        return redirect('/teos')->with('alert-success', 'Muokkaus tallennettu');;
+        return redirect('/teos')->with('alert-success', 'Muokkaus tallennettu');
     }
 
     /**

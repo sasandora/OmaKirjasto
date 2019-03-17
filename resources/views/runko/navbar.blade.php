@@ -27,7 +27,12 @@
                     </div>
                     <div class="col">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Kirjoittajat </a>
+                            <a class="nav-link {{ Request::is('kirjoittajat') ? 'active' : '' }}" href="{{ URL::to('/kirjoittajat') }}">Kirjoittajat </a>
+                        </li>
+                    </div>
+                    <div class="col">
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('kustantajat') ? 'active' : '' }}" href="{{ URL::to('/kustantajat') }}">Kustantajat </a>
                         </li>
                     </div>
                 </div>
@@ -63,7 +68,7 @@
                                 <a class="nav-link {{ Request::is('tilaukset') ? 'active' : '' }}" href="{{ URL::to('/tilaukset') }}"> Tilaukset</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Kirjoittajat </a>
+                                <a class="nav-link {{ Request::is('kirjoittajat') ? 'active' : '' }}" href="{{ URL::to('/kirjoittajat') }}">Kirjoittajat </a>
                             </li>
                     </div>
                 </div>
