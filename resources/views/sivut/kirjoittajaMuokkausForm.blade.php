@@ -6,7 +6,8 @@
 <body>
 
 @include('runko/navbar')
-@include('formit/kirjoittajalisays')
+
+@include('formit/kirjoittajamuokkaus')
 
 
 

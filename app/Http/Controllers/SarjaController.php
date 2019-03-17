@@ -111,7 +111,7 @@ class SarjaController extends Controller
         // Tehdään merkintä kirjoista sarjassa pivot tauluun
         $sarja->teos()->attach($teos);
 
-        return redirect('/sarjat')->with('alert-success', 'Kirjat lisätty');;
+        return redirect('/sarjat')->with('alert-success', 'Kirjat lisätty');
     }
 
     /**

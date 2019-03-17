@@ -40,3 +40,7 @@ Route::get('/toimituspaikkalisays', function () {
 Route::resource('teos', 'TeoksetController');
 
 Route::resource('sarjat', 'SarjaController');
+
+Route::resource('kirjoittajat', 'KirjoittajaController');
+
+Route::resource('kustantajat', 'KustantajaController');
