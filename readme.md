@@ -8,6 +8,7 @@ head on blade.php tyyppinen
 php artisan migrate //tietokanta ylös
 php artisan migrate:rollback //tietokanta alas
 php artisan migrate:reset //koko tietokanta alas
+php artisan migrate:fresh //tyhjentää tietokannan tauluista ja lisää ne uudelleen
 
 php artisan make:model teos -m //Luo teos taulun tietokantaan
 /database/migrations
