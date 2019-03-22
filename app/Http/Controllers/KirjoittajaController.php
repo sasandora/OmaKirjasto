@@ -59,7 +59,7 @@ class KirjoittajaController extends Controller
         $kirjoittaja->alias = $request->input('alias');
         $kirjoittaja->save();
 
-        return redirect('/kirjoittajat')->with('alert-success', 'Kirjoittaja lisätty');;
+        return redirect('/kirjoittajat')->with('alert-success', 'Kirjoittaja lisätty');
 
     }
 

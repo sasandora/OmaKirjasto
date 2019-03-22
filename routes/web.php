@@ -44,3 +44,11 @@ Route::resource('sarjat', 'SarjaController');
 Route::resource('kirjoittajat', 'KirjoittajaController');
 
 Route::resource('kustantajat', 'KustantajaController');
+
+Route::resource('kuvat', 'KuvaController');
+
+Route::resource('toimittajat', 'ToimittajaController');
+
+Route::resource('toimituspaikat', 'KauppapaikkaController');
+
+Route::resource('tilaukset', 'ToimitusController');

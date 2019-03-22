@@ -34,6 +34,10 @@
           $( function() {
             $( "#kuolindatepicker" ).datepicker();
           } );
+
+          $( function() {
+            $( "#saapumisaikapicker" ).datepicker();
+          } );
         </script>
 
 </head> 

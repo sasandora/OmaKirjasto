@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="fi">
 
-@include('header/head')
+@include('runko/head')
 
 <body>
 
-@include('navigaatio/navbar')
+@include('runko/navbar')
 @include('formit/toimituspaikkalisays')
 
 
