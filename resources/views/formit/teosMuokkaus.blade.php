@@ -36,10 +36,12 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Kirjoittaja</label>
                     <div class="col-lg-9">
-                        <select id="kirjoittaja" name="kirjoittaja" class="form-control" size="0">
-                            <option>J.R.R. Tolkien</option>
-                            <option>Pentti Saarikoski</option>
-                            <option>J.K. Rowling</option>
+                        <select id="kirjoittajaSelect" name="kirjoittaja" class="form-control" size="0">
+                            @foreach ($kirjoittajat as $kirjoittaja)
+                            <option value="{{$kirjoittaja->id}}">
+                                {{$kirjoittaja->nimi}}
+                            </option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -113,7 +115,8 @@
                     <label class="col-lg-3 col-form-label form-control-label"></label>
                     <div class="col-lg-9">
                         <input type="submit" class="btn btn-primary" value="Tallenna">
-                        <input type="button" class="btn btn-secondary" onclick="location.href='{{ url('teos') }}'" value="Peruuta">
+                        <input type="button" class="btn btn-secondary" onclick="location.href='{{ url('teos') }}'"
+                            value="Peruuta">
                     </div>
                 </div>
             </form>
@@ -121,23 +124,30 @@
     </div>
     <!-- /form kirja info -->
     <div class="card ">
-        <div class="card-header>
-            <div class="card-body">
-                <form action="/teos/{{$teos->id}}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <div class="col-lg-9">
-                        <input type="button" onclick="varmistus(form)" class="btn btn-danger" value="Poista" style="float:right">
+        <div class="card-header">
+            <div class=" card-body">
+            <form action="/teos/{{$teos->id}}" method="POST">
+                @method('DELETE')
+                @csrf
+                <div class="col-lg-9">
+                    <input type="button" onclick="varmistus(form)" class="btn btn-danger" value="Poista"
+                        style="float:right">
 
-                        <script>
-                            function varmistus(form) {
-                                if (confirm("Haluatko varmasti poistaa kirjan {{$teos->suominimi}}?")) {
-                                    form.submit();
-                                }
+                    <script>
+                        function varmistus(form) {
+                            if (confirm("Haluatko varmasti poistaa kirjan {{$teos->suominimi}}?")) {
+                                form.submit();
                             }
-                        </script>
+                        }
+                    </script>
 
-                    </div>
-                </form>
-            </div>
-        </div> 
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        var kirjoittaja = {!!$kirjoittaja!!};
+        $('#kirjoittajaSelect').val(kirjoittaja.id);
+    </script>

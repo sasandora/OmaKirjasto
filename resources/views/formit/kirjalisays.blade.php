@@ -36,9 +36,11 @@
                     <label class="col-lg-3 col-form-label form-control-label">Kirjoittaja</label>
                     <div class="col-lg-9">
                         <select id="kirjoittaja" name="kirjoittaja" class="form-control" size="0">
-                            <option>J.R.R. Tolkien</option>
-                            <option>Pentti Saarikoski</option>
-                            <option>J.K. Rowling</option>
+                            @foreach ($kirjoittajat as $kirjoittaja)
+                                <option value="{{$kirjoittaja->id}}">
+                                {{$kirjoittaja->nimi}}
+                                </option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

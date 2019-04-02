@@ -15,24 +15,36 @@
     @endif
 
 
-    @foreach ($teos->chunk(4) as $chunk)
+
+    @foreach ($teos as $kirja)
     <div class="row">
-        @foreach ($teos as $kirja)
-        <div class="col-sm-12 col-md-4 col-lg-4">
+
+        <div class="col-sm-12 ">
             <a href="/teos/{{$kirja->id}}/" class="card">
 
                 <h4>{{$kirja->suominimi}}</h3>
-                <h6>{{$kirja->alkupenimi}}</h5>
+                    <h6>{{$kirja->alkupenimi}}</h5>
 
             </a>
-            <input type="button" class="btn btn-info"  onclick="location.href='{{ action('TeoksetController@edit',$kirja->id) }}'" value="Muokkaa">
-            <input type="button" class="btn btn-secondary" onclick="location.href='{{ url('teos') }}'" value="Poista">
+            <form action="/teos/{{$kirja->id}}" method="POST">
+                @method('DELETE')
+                @csrf
+                <input type="button" class="btn btn-info"
+                onclick="location.href='{{ action('TeoksetController@edit',$kirja->id) }}'" value="Muokkaa">
 
+                <input type="button" onclick="varmistus(form)" class="btn btn-danger" value="Poista">
+                <script>
+                    function varmistus(form) {
+                        if (confirm("Haluatko varmasti poistaa kirjan {{$kirja->suominimi}}?")) {
+                            form.submit();
+                        }
+                    }
+                </script>
+            </form>
         </div>
-        @endforeach
+
     </div>
     @endforeach
-
 </body>
 
-</html> 
+</html>
