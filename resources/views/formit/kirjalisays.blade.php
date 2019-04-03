@@ -48,9 +48,11 @@
                     <label class="col-lg-3 col-form-label form-control-label">Kustantaja</label>
                     <div class="col-lg-9">
                         <select id="kustantaja" name="kustantaja" class="form-control" size="0">
-                            <option>Semic Oy</option>
-                            <option>Otava</option>
-                            <option>Muu Yritys</option>
+                                @foreach ($kustantajat as $kustantaja)
+                                <option value="{{$kustantaja->id}}">
+                                {{$kustantaja->nimi}}
+                                </option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

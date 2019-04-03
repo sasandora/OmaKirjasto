@@ -22,15 +22,27 @@
             <form action="{{ action('ToimitusController@store') }}" method="POST">
                 @csrf
                 <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">ToimittajaId</label>
+                    <label class="col-lg-3 col-form-label form-control-label">Toimittaja</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="toimittajaid" type="text" value="Vaatii toiminnallisuuden">
+                            <select id="toimittaja" name="toimittaja" class="form-control" size="0">
+                                    @foreach ($toimittajat as $toimittaja)
+                                        <option value="{{$toimittaja->id}}">
+                                        {{$toimittaja->myyjannimi}}
+                                        </option>
+                                    @endforeach
+                                </select>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">KauppapaikkaId</label>
+                    <label class="col-lg-3 col-form-label form-control-label">Kauppapaikka</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="kauppapaikkaid" type="text" value="Vaatii toiminnallisuuden">
+                            <select id="kauppapaikka" name="kauppapaikka" class="form-control" size="0">
+                                    @foreach ($kauppapaikat as $kauppapaikka)
+                                        <option value="{{$kauppapaikka->id}}">
+                                        {{$kauppapaikka->nimi}}
+                                        </option>
+                                    @endforeach
+                                </select>
                     </div>
                 </div>
                 <div class="form-group row">

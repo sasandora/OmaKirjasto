@@ -15,22 +15,34 @@
     @endif
 
 
-    @foreach ($toimitus->chunk(4) as $chunk)
-    <div class="row">
+    
         @foreach ($toimitus as $toimitus)
-        <div class="col-sm-12 col-md-4 col-lg-4">
-            <a href="/toimittaja/{{$toimitus->id}}/" class="card">
+        <div class="row">
+        <div class="col-sm-12">
+            <a href="/toimitus/{{$toimitus->id}}/" class="card">
 
                 <h4>Tilausaika:{{$toimitus->tilausaika}}</h3>
                 <h6>Saapumisaika:{{$toimitus->saapumisaika}}</h5>
 
             </a>
-            <input type="button" class="btn btn-info"  onclick="location.href='{{ action('toimitusController@edit',$toimitus->id) }}'" value="Muokkaa">
-            <input type="button" class="btn btn-secondary" onclick="location.href='{{ url('tilaukset') }}'" value="Poista">
+            <form action="/tilaukset/{{$toimitus->id}}" method="POST">
+                @method('DELETE')
+                @csrf
+            <input type="button" class="btn btn-info"  onclick="location.href='{{ action('ToimitusController@edit',$toimitus->id) }}'" value="Muokkaa">
+            
+            <input type="button" onclick="varmistus(form)" class="btn btn-danger" value="Poista">
+                <script>
+                    function varmistus(form) {
+                        if (confirm("Haluatko varmasti poistaa tilauksen {{$toimitus->tilausaika}}?")) {
+                            form.submit();
+                        }
+                    }
+                </script>
+            </form>
+        </div>
 
         </div>
         @endforeach
-    </div>
-    @endforeach
+    
 
 </body>

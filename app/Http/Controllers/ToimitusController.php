@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\toimitus;
+use App\Toimitus;
+use App\Toimittaja;
+use App\Kauppapaikka;
 
 
 class ToimitusController extends Controller
@@ -27,9 +29,10 @@ class ToimitusController extends Controller
      */
     public function create()
     {
-        //
+        $toimittajat = Toimittaja::all();
+        $kauppapaikat = Kauppapaikka::all();
         
-        return view('sivut/tilausLisaysForm');
+        return view('sivut/tilausLisaysForm', compact('toimittajat','kauppapaikat'));
     }
 
     /**
@@ -49,8 +52,8 @@ class ToimitusController extends Controller
         );
         // Luo kirjoittaja
         $toimitus = new toimitus;
-        $toimitus->toimittajaid = $request->input('toimittajaid');
-        $toimitus->kauppapaikkaid = $request->input('kauppapaikkaid');
+        $toimitus->toimittajaid = $request->input('toimittaja');
+        $toimitus->kauppapaikkaid = $request->input('kauppapaikka');
         $toimitus->tilausaika = $request->input('tilausaika');
         $toimitus->maksettuaika = $request->input('maksettuaika');
         $toimitus->postikulut = $request->input('postikulut');
@@ -70,7 +73,9 @@ class ToimitusController extends Controller
     {
         //
         $toimitus = toimitus::find($id);
-        return view('sivut/toimitusinfo', compact('toimitus'));
+        $toimittajat = Toimittaja::find($toimitus->toimittajaid);
+        $kauppapaikat = Kauppapaikka::find($toimitus->kauppapaikkaid);
+        return view('sivut/toimitusinfo', compact('toimitus','toimittajat','kauppapaikat'));
     }
 
     /**
@@ -82,8 +87,10 @@ class ToimitusController extends Controller
     public function edit($id)
     {
         //
+        $toimittajat = Toimittaja::all();
+        $kauppapaikat = Kauppapaikka::all();
         $toimitus = toimitus::find($id);
-        return view('sivut/tilausMuokkausForm', compact('toimitus'));
+        return view('sivut/tilausMuokkausForm', compact('toimitus','toimittajat','kauppapaikat'));
     }
 
     /**
@@ -105,15 +112,15 @@ class ToimitusController extends Controller
 
         // Muokataan toimittaja
         $toimitus = toimitus::find($id);    //Ei luoda, vaan haetaan toimitus
-        $toimitus->toimittajaid = $request->input('toimittajaid');
-        $toimitus->kauppapaikkaid = $request->input('kauppapaikkaid');
+        $toimitus->toimittajaid = $request->input('toimittaja');
+        $toimitus->kauppapaikkaid = $request->input('kauppapaikka');
         $toimitus->tilausaika = $request->input('tilausaika');
         $toimitus->maksettuaika = $request->input('maksettuaika');
         $toimitus->postikulut = $request->input('postikulut');
         $toimitus->saapumisaika = $request->input('saapumisaika');
         $toimitus->save();
 
-        return redirect('/toimitukset')->with('alert-success', 'Muokkaus tallennettu');
+        return redirect('/tilaukset')->with('alert-success', 'Muokkaus tallennettu');
     }
 
     /**
@@ -127,6 +134,6 @@ class ToimitusController extends Controller
         //
         $toimitus = toimitus::find($id);
         $toimitus->delete();
-        return redirect('/toimitukset')->with('alert-success', 'Tilaus poistettu');
+        return redirect('/tilaukset')->with('alert-success', 'Tilaus poistettu');
     }
 }

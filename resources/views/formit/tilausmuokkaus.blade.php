@@ -25,13 +25,25 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">ToimittajaId</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="toimittajaid" type="text" value="{{$toimitus->toimittajaid}}">
+                            <select id="toimittajaSelect" name="toimittaja" class="form-control" size="0">
+                                    @foreach ($toimittajat as $toimittaja)
+                                        <option value="{{$toimittaja->id}}">
+                                        {{$toimittaja->myyjannimi}}
+                                        </option>
+                                    @endforeach
+                                </select>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">KauppapaikkaId</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="kauppapaikkaid" type="text" value="{{$toimitus->kauppapaikkaid}}">
+                            <select id="kauppapaikkaSelect" name="kauppapaikka" class="form-control" size="0">
+                                    @foreach ($kauppapaikat as $kauppapaikka)
+                                        <option value="{{$kauppapaikka->id}}">
+                                        {{$kauppapaikka->nimi}}
+                                        </option>
+                                    @endforeach
+                                </select>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -69,24 +81,10 @@
         </div>
     </div>
     <!-- /form toimittaja info -->
-    <div class="card ">
-        <div class="card-header>
-            <div class="card-body">
-                <form action="/tilaukset/{{$toimitus->id}}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <div class="col-lg-9">
-                        <input type="button" onclick="varmistus(form)" class="btn btn-danger" value="Poista" style="float:right">
-
-                        <script>
-                            function varmistus(form) {
-                                if (confirm("Haluatko varmasti poistaa tilaukset {{$toimitus->tilausaika}}?")) {
-                                    form.submit();
-                                }
-                            }
-                        </script>
-
-                    </div>
-                </form>
-            </div>
-        </div> 
+    <script>
+            var tomittaja = {!!$toimittaja!!};
+            $('#toimittajaSelect').val(toimittaja.id);
+    
+            var kauppapaikka = {!!$kauppapaikka!!};
+            $('#kauppapaikkaSelect').val(kauppapaikka.id);
+        </script>

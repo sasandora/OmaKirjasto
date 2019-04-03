@@ -15,23 +15,35 @@
     @endif
 
 
-    @foreach ($kirjoittaja->chunk(4) as $chunk)
-    <div class="row">
+    
         @foreach ($kirjoittaja as $kirjoittaja)
-        <div class="col-sm-12 col-md-4 col-lg-4">
+        <div class="row">
+        <div class="col-sm-12">
             <a href="/kirjoittaja/{{$kirjoittaja->id}}/" class="card">
 
                 <h4>{{$kirjoittaja->nimi}}</h3>
                 <h6>{{$kirjoittaja->kuvaus}}</h5>
 
             </a>
+            <form action="/kirjoittajat/{{$kirjoittaja->id}}" method="POST">
+                @method('DELETE')
+                @csrf
             <input type="button" class="btn btn-info"  onclick="location.href='{{ action('KirjoittajaController@edit',$kirjoittaja->id) }}'" value="Muokkaa">
-            <input type="button" class="btn btn-secondary" onclick="location.href='{{ url('kirjoittaja') }}'" value="Poista">
+            
+            <input type="button" onclick="varmistus(form)" class="btn btn-danger" value="Poista">
+            <script>
+                function varmistus(form) {
+                    if (confirm("Haluatko varmasti poistaa kirjoittajan {{$kirjoittaja->nimi}}?")) {
+                        form.submit();
+                    }
+                }
+            </script>
+            </form>
+        </div>
 
         </div>
         @endforeach
-    </div>
-    @endforeach
+    
 
 </body>
 
