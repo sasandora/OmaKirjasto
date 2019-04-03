@@ -59,18 +59,26 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ action('KuvaController@store',$kirja->id) }}" method="POST">
+                    <form action="{{ action('KuvaController@update',$kirja->id) }}" method="POST">
                         @csrf
-                        <label class="col-lg-3 col-form-label form-control-label">Linkki</label>
-                        <input class="form-control" name="url" type="text" placeholder="Suora linkki kuvaan">
+                        @method('PUT')
+                        <div class="form-group row">
 
-                        <input type="button" class="btn btn-primary" value="Ota kuva">
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <input type="submit" class="btn btn-primary" value="Tallenna">
+                            <label class="col-lg-3 col-form-label form-control-label">Linkki</label>
+                            <input class="form-control" name="url" type="text" placeholder="Suora linkki kuvaan">
+                        </div>
+                        <div class="form-group row">
+                            <video id="video" width="640" height="480" autoplay></video>
+                            <button id="snap">Snap Photo</button>
+                            <canvas id="canvas" width="640" height="480"></canvas>
+                            <input type="button" class="btn btn-primary" value="Ota kuva">
                         </div>
 
                     </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Tallenna">
+                    </div>
 
                 </div>
 
