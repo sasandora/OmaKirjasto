@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Toimitus;
 use App\Toimittaja;
 use App\Kauppapaikka;
+use App\teos;
 
 
 class ToimitusController extends Controller
@@ -31,8 +32,10 @@ class ToimitusController extends Controller
     {
         $toimittajat = Toimittaja::all();
         $kauppapaikat = Kauppapaikka::all();
+        $teos = Teos::orderBy('suominimi')->get();
+
         
-        return view('sivut/tilausLisaysForm', compact('toimittajat','kauppapaikat'));
+        return view('sivut/tilausLisaysForm', compact('toimittajat','kauppapaikat','teos'));
     }
 
     /**
@@ -59,6 +62,11 @@ class ToimitusController extends Controller
         $toimitus->postikulut = $request->input('postikulut');
         $toimitus->saapumisaika = $request->input('saapumisaika');
         $toimitus->save();
+
+        $teos = Teos::findMany($request->teos);
+        // Tehdään merkintä kirjoista sarjassa pivot tauluun
+        //$teos->tilausid =$toimitus->id;
+        Teos::where('id',[$request->teos])->update(['toimitusid'=>$toimitus->id]);
 
         return redirect('/tilaukset')->with('alert-success', 'Tilaus lisätty');
     }
@@ -90,7 +98,8 @@ class ToimitusController extends Controller
         $toimittajat = Toimittaja::all();
         $kauppapaikat = Kauppapaikka::all();
         $toimitus = toimitus::find($id);
-        return view('sivut/tilausMuokkausForm', compact('toimitus','toimittajat','kauppapaikat'));
+        $teos = Teos::orderBy('suominimi')->get();
+        return view('sivut/tilausMuokkausForm', compact('toimitus','toimittajat','kauppapaikat','teos'));
     }
 
     /**

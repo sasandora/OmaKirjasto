@@ -46,6 +46,14 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Kirjat
+                        <input type="button" class="btn btn-info" id="button" onclick="uusikirja()" value="+"></label>
+                    <div class="col-lg-9">
+                        <ol>
+                        </ol>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Tilausaika</label>
                     <div class="col-lg-9">
                         <input type="text" name="tilausaika" id="syntymadatepicker">
@@ -80,3 +88,33 @@
         </div>
     </div>
     <!-- /form toimittaja info -->
+
+    <script>
+        var kerta = 0;
+        var kirjat = {!!$teos!!};
+
+        function uusikirja() {
+            kerta++;
+            var selekti = '<li class="li' + kerta +
+                '">            <div class="input-group mb-3"> <div class="input-group-prepend">' +
+                '<input type = "button" onclick = "poista(' + kerta +
+                ')" class = "btn btn-primary" value = "X" > </div>' +
+                '<select class="custom-select " name="teos[teos' + kerta +
+                ']" id="inputGroupSelect01">';
+
+
+            for (var y = 0; y < kirjat.length; y++) {
+                selekti += '<option value="' + kirjat[y].id + '">' +
+                    kirjat[y].suominimi + '</option>  ';
+            }
+            selekti += '< /select></div></li >';
+
+            $("ol").prepend(selekti);
+        }
+
+        function poista(p) {
+            var poista = ".li" + p;
+            $(poista).remove();
+        }
+
+    </script>
