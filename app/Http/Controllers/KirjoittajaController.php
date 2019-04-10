@@ -71,10 +71,9 @@ class KirjoittajaController extends Controller
      */
     public function show($id)
     {
-        //
-                //Käytetään yhden kirjoittajan näyttämiseen
-                $kirjoittaja = kirjoittaja::find($id);
-                return view('sivut/kirjoittajainfo', compact('kirjoittaja'));
+        //Käytetään yhden kirjoittajan näyttämiseen
+        $kirjoittaja = kirjoittaja::find($id);
+        return view('sivut/kirjoittajainfo', compact('kirjoittaja'));
     }
 
     /**

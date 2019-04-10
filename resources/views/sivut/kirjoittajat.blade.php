@@ -19,7 +19,7 @@
     <div class="row">
         @foreach ($kirjoittaja as $kirjoittaja)
         <div class="col-sm-12 col-md-4 col-lg-4">
-            <a href="/kirjoittaja/{{$kirjoittaja->id}}/" class="card">
+            <a href="/kirjoittajat/{{$kirjoittaja->id}}/" class="card">
 
                 <h4>{{$kirjoittaja->nimi}}</h3>
                 <h6>{{$kirjoittaja->kuvaus}}</h5>
