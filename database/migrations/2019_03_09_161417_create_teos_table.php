@@ -26,7 +26,7 @@ class CreateTeosTable extends Migration
             $table->string('status')->nullable($value = true);	
             $table->string('hinta')->nullable($value = true);	
             $table->string('suomentaja')->nullable($value = true);	
-            $table->date('vuosi')->nullable($value = true);	
+            $table->string('vuosi')->nullable($value = true);	
             $table->string('kuvittaja')->nullable($value = true);	
             $table->timestamps();
         });

@@ -59,7 +59,7 @@ class TeoksetController extends Controller
         $teos->hinta = $request->input('hinta');
         $teos->kirjoittajaid = $request->input('kirjoittaja');
         $teos->kustantajaid = $request->input('kustantaja');
-
+        $teos->vuosi = $request->input('vuosi');
         $teos->suomentaja = $request->input('suomentaja');
         $teos->kuvittaja = $request->input('kuvittaja');
         $teos->save();
@@ -123,7 +123,7 @@ class TeoksetController extends Controller
         $teos->hinta = $request->input('hinta');
         $teos->kirjoittajaid = $request->input('kirjoittaja');
         $teos->kustantajaid = $request->input('kustantaja');
-
+        $teos->vuosi = $request->input('vuosi');
         $teos->suomentaja = $request->input('suomentaja');
         $teos->kuvittaja = $request->input('kuvittaja');
         $teos->save();

@@ -16,7 +16,7 @@
     <!-- form toimittaja info -->
     <div class="card card-outline-secondary">
         <div class="card-header">
-            <h3 class="mb-0">Lisää toimittaja</h3>
+            <h3 class="mb-0">Muokkaa toimittajaa</h3>
         </div>
         <div class="card-body">
             <form action="/toimittajat/{{$toimittaja->id}}" method="POST">
@@ -43,7 +43,7 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Puhelinnumero</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="puhelinnumero" type="text" value="{{$toimittaja->puhelin}}">
+                        <input class="form-control" name="puhelin" type="text" value="{{$toimittaja->puhelin}}">
                     </div>
                 </div>
                 <div class="form-group row">

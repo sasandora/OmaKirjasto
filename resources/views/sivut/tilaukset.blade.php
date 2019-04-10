@@ -19,7 +19,7 @@
         @foreach ($toimitus as $toimitus)
         <div class="row">
         <div class="col-sm-12">
-            <a href="/toimitus/{{$toimitus->id}}/" class="card">
+            <a href="/tilaukset/{{$toimitus->id}}/" class="card">
 
                 <h4>Tilausaika:{{$toimitus->tilausaika}}</h3>
                 <h6>Saapumisaika:{{$toimitus->saapumisaika}}</h5>

@@ -83,7 +83,7 @@ class ToimitusController extends Controller
         $toimitus = toimitus::find($id);
         $toimittajat = Toimittaja::find($toimitus->toimittajaid);
         $kauppapaikat = Kauppapaikka::find($toimitus->kauppapaikkaid);
-        return view('sivut/toimitusinfo', compact('toimitus','toimittajat','kauppapaikat'));
+        return view('sivut/tilausinfo', compact('toimitus','toimittajat','kauppapaikat'));
     }
 
     /**

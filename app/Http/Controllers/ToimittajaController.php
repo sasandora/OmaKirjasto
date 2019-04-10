@@ -68,7 +68,7 @@ class ToimittajaController extends Controller
     {
         //
         $toimittaja = toimittaja::find($id);
-                return view('sivut/toimittajainfo', compact('toimittaja'));
+        return view('sivut/toimittajainfo', compact('toimittaja'));
     }
 
     /**

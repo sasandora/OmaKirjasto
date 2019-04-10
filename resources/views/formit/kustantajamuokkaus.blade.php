@@ -16,7 +16,7 @@
     <!-- form kustantaja info -->
     <div class="card card-outline-secondary">
         <div class="card-header">
-            <h3 class="mb-0">Muokkaa kirjoittajaa</h3>
+            <h3 class="mb-0">Muokkaa kustantajaa</h3>
         </div>
         <div class="card-body">
             <form action="/kustantajat/{{$kustantaja->id}}" method="POST">
