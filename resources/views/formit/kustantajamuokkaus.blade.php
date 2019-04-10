@@ -50,7 +50,7 @@
                     <label class="col-lg-3 col-form-label form-control-label"></label>
                     <div class="col-lg-9">
                         <input type="submit" class="btn btn-primary" value="Tallenna">
-                        <input type="button" class="btn btn-secondary onclick="location.href="{{ url('kirjoittaja') }}" value="Peruuta">
+                        <input type="button" class="btn btn-secondary onclick="location.href="{{ url('kustantajat') }}" value="Peruuta">
                     </div>
                 </div>
             </form>

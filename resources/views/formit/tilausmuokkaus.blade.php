@@ -1,7 +1,7 @@
 </div>
 <!--/col-->
 <div class="col-md-8 offset-md-2">
-    <span class="anchor" id="formTilausLisays"></span>
+    <span class="anchor" id="formTilausMuokkaus"></span>
     <hr class="my-5">
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -19,12 +19,13 @@
             <h3 class="mb-0">Lisää tilaus</h3>
         </div>
         <div class="card-body">
-            <form action="{{ action('ToimitusController@store') }}" method="POST">
+            <form action="/tilaukset/{{$toimitus->id}}" method="POST">
+                @method('PUT')
                 @csrf
                 <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Toimittaja</label>
+                    <label class="col-lg-3 col-form-label form-control-label">ToimittajaId</label>
                     <div class="col-lg-9">
-                            <select id="toimittaja" name="toimittaja" class="form-control" size="0">
+                            <select id="toimittajaSelect" name="toimittaja" class="form-control" size="0">
                                     @foreach ($toimittajat as $toimittaja)
                                         <option value="{{$toimittaja->id}}">
                                         {{$toimittaja->myyjannimi}}
@@ -34,9 +35,9 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Kauppapaikka</label>
+                    <label class="col-lg-3 col-form-label form-control-label">KauppapaikkaId</label>
                     <div class="col-lg-9">
-                            <select id="kauppapaikka" name="kauppapaikka" class="form-control" size="0">
+                            <select id="kauppapaikkaSelect" name="kauppapaikka" class="form-control" size="0">
                                     @foreach ($kauppapaikat as $kauppapaikka)
                                         <option value="{{$kauppapaikka->id}}">
                                         {{$kauppapaikka->nimi}}
@@ -46,35 +47,27 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Kirjat
-                        <input type="button" class="btn btn-info" id="button" onclick="uusikirja()" value="+"></label>
-                    <div class="col-lg-9">
-                        <ol>
-                        </ol>
-                    </div>
-                </div>
-                <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Tilausaika</label>
                     <div class="col-lg-9">
-                        <input type="text" name="tilausaika" id="syntymadatepicker">
+                        <input type="text" name="tilausaika" id="syntymadatepicker" value="{{$toimitus->tilausaika}}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Maksettu</label>
                     <div class="col-lg-9">
-                        <input type="text" name="maksettuaika" id="kuolindatepicker">
+                        <input type="text" name="maksettuaika" id="kuolindatepicker" value="{{$toimitus->maksettuaika}}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Postikulut</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="postikulut" type="text" value="postikulut">
+                        <input class="form-control" name="postikulut" type="text" value="postikulut" value="{{$toimitus->postikulut}}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Saapumisaika</label>
                     <div class="col-lg-9">
-                        <input type="text" name="saapumisaika" id="saapumisaikapicker">
+                        <input type="text" name="saapumisaika" id="saapumisaikapicker" value="{{$toimitus->saapumisaika}}">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -88,33 +81,10 @@
         </div>
     </div>
     <!-- /form toimittaja info -->
-
     <script>
-        var kerta = 0;
-        var kirjat = {!!$teos!!};
-
-        function uusikirja() {
-            kerta++;
-            var selekti = '<li class="li' + kerta +
-                '">            <div class="input-group mb-3"> <div class="input-group-prepend">' +
-                '<input type = "button" onclick = "poista(' + kerta +
-                ')" class = "btn btn-primary" value = "X" > </div>' +
-                '<select class="custom-select " name="teos[teos' + kerta +
-                ']" id="inputGroupSelect01">';
-
-
-            for (var y = 0; y < kirjat.length; y++) {
-                selekti += '<option value="' + kirjat[y].id + '">' +
-                    kirjat[y].suominimi + '</option>  ';
-            }
-            selekti += '< /select></div></li >';
-
-            $("ol").prepend(selekti);
-        }
-
-        function poista(p) {
-            var poista = ".li" + p;
-            $(poista).remove();
-        }
-
-    </script>
+            var tomittaja = {!!$toimittaja!!};
+            $('#toimittajaSelect').val(toimittaja.id);
+    
+            var kauppapaikka = {!!$kauppapaikka!!};
+            $('#kauppapaikkaSelect').val(kauppapaikka.id);
+        </script>

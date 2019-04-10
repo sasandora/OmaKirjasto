@@ -32,7 +32,7 @@
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Kirjoittaja:</label>
-                <label class="col-lg-3 col-form-label form-control-label">{{$teos->Kirjoittaja}}</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$kirjoittajat->nimi}}</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
