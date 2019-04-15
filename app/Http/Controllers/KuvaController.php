@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\kuva;
-
+use App\Kuva;
+use App\Teos;
 
 class KuvaController extends Controller
 {
@@ -36,9 +36,16 @@ class KuvaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $kuva = new Kuva;
+        $kuva->kirjaid  = $id;
+        $kuva->url = $request->input('url');
+        $kuva->save();
+
+        $teos = Teos::all();
+        return view('sivut/kirjat', compact('teos'));
+
     }
 
     /**
@@ -72,7 +79,13 @@ class KuvaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $kuva = new Kuva;
+        $kuva->kirjaid  = $id;
+        $kuva->url = $request->input('url');
+        $kuva->save();
+
+        $teos = Teos::all();
+        return view('sivut/kirjat', compact('teos'));
     }
 
     /**

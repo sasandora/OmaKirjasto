@@ -20,6 +20,9 @@ class TeoksetController extends Controller
         //Näytetään kirjojen etusivu. Käydään siis kaikki kirjat.
         $teos = Teos::all();
         return view('sivut/kirjat', compact('teos'));
+
+        // return view('sivut/kirjat');
+
     }
 
     /**

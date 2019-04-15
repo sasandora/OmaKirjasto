@@ -13,28 +13,36 @@
 
 Route::view('/', 'sivut/welcome');
 Route::view('tilaukset', 'sivut/welcome');
+Route::view('kirjalisays', 'sivut/kirjaLisaysForm');
+Route::view('kirjoittajalisays', 'sivut/kirjoittajaLisaysForm');
+Route::view('kustantajalisays', 'sivut/kustantajaLisaysForm');
+Route::view('sarjalisays', 'sivut/kirjasarjaLisaysForm');
+Route::view('toimittajalisays', 'sivut/toimittajaLisaysForm');
+Route::view('tilauslisays', 'sivut/tilausLisaysForm');
+Route::view('toimituspaikkalisays', 'sivut/toimituspaikkaLisaysForm');
 
-Route::get('/kirjalisays', function () {
-    return view('sivut/kirjaLisaysForm');
-});
-Route::get('/kirjoittajalisays', function () {
-    return view('sivut/kirjoittajaLisaysForm');
-});
-Route::get('/kustantajalisays', function () {
-    return view('sivut/kustantajaLisaysForm');
-});
-Route::get('/sarjalisays', function () {
-    return view('sivut/kirjasarjaLisaysForm');
-});
-Route::get('/toimittajalisays', function () {
-    return view('sivut/toimittajaLisaysForm');
-});
-Route::get('/tilauslisays', function () {
-    return view('sivut/tilausLisaysForm');
-});
-Route::get('/toimituspaikkalisays', function () {
-    return view('sivut/toimituspaikkaLisaysForm');
-});
+
+// Route::get('/kirjalisays', function () {
+//     return view('sivut/kirjaLisaysForm');
+// });
+// Route::get('/kirjoittajalisays', function () {
+//     return view('sivut/kirjoittajaLisaysForm');
+// });
+// Route::get('/kustantajalisays', function () {
+//     return view('sivut/kustantajaLisaysForm');
+// });
+// Route::get('/sarjalisays', function () {
+//     return view('sivut/kirjasarjaLisaysForm');
+// });
+// Route::get('/toimittajalisays', function () {
+//     return view('sivut/toimittajaLisaysForm');
+// });
+// Route::get('/tilauslisays', function () {
+//     return view('sivut/tilausLisaysForm');
+// });
+// Route::get('/toimituspaikkalisays', function () {
+//     return view('sivut/toimituspaikkaLisaysForm');
+// });
 
 //Reitittää kaikki CRUD-jutut kontrollerille kansioon app/http/controllers/teoksetcontroller.php
 Route::resource('teos', 'TeoksetController');
