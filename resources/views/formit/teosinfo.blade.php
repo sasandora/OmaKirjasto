@@ -17,7 +17,7 @@
         <div class="card-body">
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
-                <img width="20%" src="https://upload.wikimedia.org/wikipedia/fi/thumb/7/77/Taru_sormusten_herrasta.jpg/196px-Taru_sormusten_herrasta.jpg">
+                <img width="20%" src="{{$kuva->url}}">
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>

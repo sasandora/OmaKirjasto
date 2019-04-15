@@ -47,6 +47,7 @@
 
     </div>
     @endforeach
+
     <!-- Modal -->
     <div class="modal fade" id="addPicMod" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -54,9 +55,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Lisää kuva</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <div class="modal-body">
                     <form action="{{ action('KuvaController@update',$kirja->id) }}" method="POST">
@@ -67,25 +65,17 @@
                             <label class="col-lg-3 col-form-label form-control-label">Linkki</label>
                             <input class="form-control" name="url" type="text" placeholder="Suora linkki kuvaan">
                         </div>
-                        <div class="form-group row">
-                            <video id="video" width="640" height="480" autoplay></video>
-                            <button id="snap">Snap Photo</button>
-                            <canvas id="canvas" width="640" height="480"></canvas>
-                            <input type="button" class="btn btn-primary" value="Ota kuva">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-primary" value="Tallenna">
                         </div>
-
                     </form>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-primary" value="Tallenna">
-                    </div>
+
 
                 </div>
-
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
