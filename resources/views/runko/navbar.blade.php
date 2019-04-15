@@ -78,7 +78,16 @@
                                 <a class="nav-link {{ Request::is('tilaukset') ? 'active' : '' }}" href="{{ URL::to('/tilaukset') }}"> Tilaukset</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('kirjoittajat') ? 'active' : '' }}" href="{{ URL::to('/kirjoittajat') }}">Kirjoittajat </a>
+                                <a class="nav-link {{ Request::is('kirjoittajat') ? 'active' : '' }}" href="{{ URL::to('/kirjoittajat') }}">Kirjoittajat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ Request::is('kustantajat') ? 'active' : '' }}" href="{{ URL::to('/kustantajat') }}">Kustantajat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ Request::is('toimituspaikat') ? 'active' : '' }}" href="{{ URL::to('/toimituspaikat') }}">Toimituspaikat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ Request::is('toimittajat') ? 'active' : '' }}" href="{{ URL::to('/toimittajat') }}">Myyjät</a>
                             </li>
                     </div>
                 </div>
