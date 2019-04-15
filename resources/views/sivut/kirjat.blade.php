@@ -46,8 +46,6 @@
         </div>
 
     </div>
-    @endforeach
-
     <!-- Modal -->
     <div class="modal fade" id="addPicMod" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -76,6 +74,9 @@
             </div>
         </div>
     </div>
+
+    @endforeach
+
 </body>
 
 </html>
