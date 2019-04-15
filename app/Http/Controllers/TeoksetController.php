@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Teos;
 use App\Kirjoittaja;
 use App\Kustantaja;
+use App\Kirja;
+
 
 
 class TeoksetController extends Controller
@@ -82,6 +84,7 @@ class TeoksetController extends Controller
         $teos = Teos::find($id);
         $kirjoittajat = Kirjoittaja::find($teos->kirjoittajaid);
         $kustantajat = Kustantaja::find($teos->kustantajaid);
+        $kuva = Kuva::where('kirjaid',$id)->first();
         return view('sivut/teosinfo', compact('teos', 'kirjoittajat', 'kustantajat'));
     }
 
