@@ -31,7 +31,7 @@
                 @csrf
                 <input type="button" class="btn btn-info"
                     onclick="location.href='{{ action('TeoksetController@edit',$kirja->id) }}'" value="Muokkaa">
-                <input type="button" class="btn btn-info" data-toggle="modal" data-target="#addPicMod"
+                <input type="button" class="btn btn-info" data-toggle="modal" data-target="#addPicMod{{$kirja->id}}"
                     value=" Lisää kuva">
 
                 <input type="button" onclick="varmistus(form)" class="btn btn-danger" value="Poista">
@@ -46,10 +46,8 @@
         </div>
 
     </div>
-    @endforeach
-
     <!-- Modal -->
-    <div class="modal fade" id="addPicMod" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="addPicMod{{$kirja->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -76,6 +74,9 @@
             </div>
         </div>
     </div>
+
+    @endforeach
+
 </body>
 
 </html>
