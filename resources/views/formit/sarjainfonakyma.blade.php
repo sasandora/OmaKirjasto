@@ -28,13 +28,13 @@
                
             </div>
             @foreach ($teokset as $kirja)
-                    <div class="form-group row justify-content-center">
+                    <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label"></label>
-                         <div class="card-body">
+                         <div class="row">
                          <a href="/teos/{{$kirja->id}}/" class="card">
 
-                            <label>{{$kirja->suominimi}}</label>
-                            <label>{{$kirja->alkupenimi}}</label>
+                            <h5>{{$kirja->suominimi}}</h5>
+                            <h6>{{$kirja->alkupenimi}}</h6>
 
                         </a>
                         </div>
@@ -43,3 +43,4 @@
             
         </div>
     </div>
+</div>
