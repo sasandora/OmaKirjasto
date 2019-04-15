@@ -91,8 +91,8 @@ class TeoksetController extends Controller
         if($kustantajat->nimi == null){
             $kustantajat->nimi = "tuntematon";
         }
-        if($kustantajat->nimi == null){
-            $kustantajat->nimi = "http://res.freestockphotos.biz/pictures/14/14324-illustration-of-a-book-pv.png";
+        if($kuva->url == null){
+            $kuva->url = "http://res.freestockphotos.biz/pictures/14/14324-illustration-of-a-book-pv.png";
         }
         return view('sivut/teosinfo', compact('teos', 'kirjoittajat', 'kustantajat','kuva'));
     }
