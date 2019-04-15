@@ -37,12 +37,12 @@
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Kustantaja:</label>
-                <label class="col-lg-3 col-form-label form-control-label">{{$teos->Kustantaja}}</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$kustantajat->nimi}}</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Kunto:</label>
-                <label class="col-lg-3 col-form-label form-control-label">{{$teos->kuntoluokka}}</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->kunto}}</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
@@ -72,7 +72,7 @@
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
                 <label class="col-lg-2 col-form-label form-control-label">Kuvittaja:</label>
-                <label class="col-lg-3 col-form-label form-control-label">{{$teos->Kuvittaja}}</label>
+                <label class="col-lg-3 col-form-label form-control-label">{{$teos->kuvittaja}}</label>
             </div>
         </div>
     </div>

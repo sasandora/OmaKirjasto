@@ -16,7 +16,7 @@
     <!-- form kustantaja info -->
     <div class="card card-outline-secondary">
         <div class="card-header">
-            <h3 class="mb-0">Muokkaa kirjoittajaa</h3>
+            <h3 class="mb-0">Muokkaa kustantajaa</h3>
         </div>
         <div class="card-body">
             <form action="/kustantajat/{{$kustantaja->id}}" method="POST">
@@ -50,7 +50,7 @@
                     <label class="col-lg-3 col-form-label form-control-label"></label>
                     <div class="col-lg-9">
                         <input type="submit" class="btn btn-primary" value="Tallenna">
-                        <input type="button" class="btn btn-secondary onclick="location.href="{{ url('kustantajat') }}" value="Peruuta">
+                        <input type="button" class="btn btn-secondary" onclick="location.href='{{ url('kustantajat') }}'" value="Peruuta">
                     </div>
                 </div>
             </form>

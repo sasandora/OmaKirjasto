@@ -99,7 +99,6 @@ class KustantajaController extends Controller
         );
         //
         $kustantaja = kustantaja::find($id); 
-        $kustantaja = new kustantaja;
         $kustantaja->nimi = $request->input('nimi');
         $kustantaja->kotipaikka = $request->input('kotipaikka');
         $kustantaja->perustamisvuosi = $request->input('perustamisvuosi');
@@ -120,6 +119,6 @@ class KustantajaController extends Controller
         //
         $kustantaja = kustantaja::find($id);
         $kustantaja->delete();
-        return redirect('/kustantaja')->with('alert-success', 'Kustantaja poistettu');
+        return redirect('/kustantajat')->with('alert-success', 'Kustantaja poistettu');
     }
 }

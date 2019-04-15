@@ -17,8 +17,8 @@ class CreateKustantajasTable extends Migration
             $table->increments('id'); //Pääavain
             $table->string('nimi');
             $table->string('kotipaikka')->nullable($value = true);
-            $table->year('perustamisvuosi')->nullable($value = true);
-            $table->year('lopettamisvuosi')->nullable($value = true);
+            $table->string('perustamisvuosi')->nullable($value = true);
+            $table->string('lopettamisvuosi')->nullable($value = true);
             $table->timestamps();
         });
     }

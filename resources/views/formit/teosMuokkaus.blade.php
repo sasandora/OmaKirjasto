@@ -48,10 +48,12 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Kustantaja</label>
                     <div class="col-lg-9">
-                        <select id="kustantaja" name="kustantaja" class="form-control" size="0">
-                            <option>Semic Oy</option>
-                            <option>Otava</option>
-                            <option>Muu Yritys</option>
+                        <select id="kustantajaSelect" name="kustantaja" class="form-control" size="0">
+                                @foreach ($kustantajat as $kustantaja)
+                                <option value="{{$kustantaja->id}}">
+                                    {{$kustantaja->nimi}}
+                                </option>
+                                @endforeach
                         </select>
                     </div>
                 </div>
@@ -123,31 +125,13 @@
         </div>
     </div>
     <!-- /form kirja info -->
-    <div class="card ">
-        <div class="card-header">
-            <div class=" card-body">
-            <form action="/teos/{{$teos->id}}" method="POST">
-                @method('DELETE')
-                @csrf
-                <div class="col-lg-9">
-                    <input type="button" onclick="varmistus(form)" class="btn btn-danger" value="Poista"
-                        style="float:right">
-
-                    <script>
-                        function varmistus(form) {
-                            if (confirm("Haluatko varmasti poistaa kirjan {{$teos->suominimi}}?")) {
-                                form.submit();
-                            }
-                        }
-                    </script>
-
-                </div>
-            </form>
-        </div>
-    </div>
+    
 
 
     <script>
         var kirjoittaja = {!!$kirjoittaja!!};
         $('#kirjoittajaSelect').val(kirjoittaja.id);
+
+        var kustantaja = {!!$kustantaja!!};
+        $('#kustantajaSelect').val(kustantaja.id);
     </script>

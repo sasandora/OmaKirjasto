@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Teos;
 use App\Kirjoittaja;
+use App\Kustantaja;
+
+
 class TeoksetController extends Controller
 {
     /**
@@ -30,8 +33,9 @@ class TeoksetController extends Controller
     public function create()
     {
         $kirjoittajat = Kirjoittaja::all();
+        $kustantajat = Kustantaja::all();
         //Näytetään sivu, jolla luodaan kirja
-        return view('sivut/kirjaLisaysForm', compact('kirjoittajat'));
+        return view('sivut/kirjaLisaysForm', compact('kirjoittajat', 'kustantajat'));
     }
 
     /**
@@ -57,7 +61,8 @@ class TeoksetController extends Controller
         $teos->status = $request->input('status');
         $teos->hinta = $request->input('hinta');
         $teos->kirjoittajaid = $request->input('kirjoittaja');
-
+        $teos->kustantajaid = $request->input('kustantaja');
+        $teos->vuosi = $request->input('vuosi');
         $teos->suomentaja = $request->input('suomentaja');
         $teos->kuvittaja = $request->input('kuvittaja');
         $teos->save();
@@ -76,7 +81,8 @@ class TeoksetController extends Controller
         //Käytetään yhden kirjan näyttämiseen
         $teos = Teos::find($id);
         $kirjoittajat = Kirjoittaja::find($teos->kirjoittajaid);
-        return view('sivut/teosinfo', compact('teos', 'kirjoittajat'));
+        $kustantajat = Kustantaja::find($teos->kustantajaid);
+        return view('sivut/teosinfo', compact('teos', 'kirjoittajat', 'kustantajat'));
     }
 
     /**
@@ -88,9 +94,10 @@ class TeoksetController extends Controller
     public function edit($id)
     {
         //Viedään kirja editoitavaksi formiin
-        $kirjoittajat = kirjoittaja::all();
+        $kirjoittajat = Kirjoittaja::all();
+        $kustantajat = Kustantaja::all();
         $teos = Teos::find($id);
-        return view('sivut/teosMuokkausForm', compact('teos','kirjoittajat'));
+        return view('sivut/teosMuokkausForm', compact('teos','kirjoittajat', 'kustantajat'));
     }
 
     /**
@@ -118,7 +125,8 @@ class TeoksetController extends Controller
         $teos->status = $request->input('status');
         $teos->hinta = $request->input('hinta');
         $teos->kirjoittajaid = $request->input('kirjoittaja');
-
+        $teos->kustantajaid = $request->input('kustantaja');
+        $teos->vuosi = $request->input('vuosi');
         $teos->suomentaja = $request->input('suomentaja');
         $teos->kuvittaja = $request->input('kuvittaja');
         $teos->save();

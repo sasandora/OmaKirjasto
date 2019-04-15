@@ -17,6 +17,8 @@ class CreateTeosTable extends Migration
             $table->increments('id');               //Pääavain
             $table->integer('kirjoittajaid')->nullable($value = true);	    //Vierasavain
             $table->integer('kustantajaid')->nullable($value = true);	    //Vierasavain
+            $table->integer('toimitusid')->nullable($value = true);	    //Vierasavain
+            $table->string('sarjaid')->nullable($value = true);
             $table->string('alkupenimi')->nullable($value = true);	
             $table->string('suominimi')->nullable($value = true);	
             $table->string('painos')->nullable($value = true);	
@@ -25,7 +27,7 @@ class CreateTeosTable extends Migration
             $table->string('status')->nullable($value = true);	
             $table->string('hinta')->nullable($value = true);	
             $table->string('suomentaja')->nullable($value = true);	
-            $table->date('vuosi')->nullable($value = true);	
+            $table->string('vuosi')->nullable($value = true);	
             $table->string('kuvittaja')->nullable($value = true);	
             $table->timestamps();
         });
