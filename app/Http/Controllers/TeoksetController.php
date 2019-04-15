@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Teos;
 use App\Kirjoittaja;
 use App\Kustantaja;
-use App\Kirja;
+use App\Kuva;
 
 
 
@@ -85,7 +85,16 @@ class TeoksetController extends Controller
         $kirjoittajat = Kirjoittaja::find($teos->kirjoittajaid);
         $kustantajat = Kustantaja::find($teos->kustantajaid);
         $kuva = Kuva::where('kirjaid',$id)->first();
-        return view('sivut/teosinfo', compact('teos', 'kirjoittajat', 'kustantajat'));
+        if($kirjoittajat->nimi == null){
+            $kirjoittajat->nimi = "tuntematon";
+        }
+        if($kustantajat->nimi == null){
+            $kustantajat->nimi = "tuntematon";
+        }
+        if($kustantajat->nimi == null){
+            $kustantajat->nimi = "http://res.freestockphotos.biz/pictures/14/14324-illustration-of-a-book-pv.png";
+        }
+        return view('sivut/teosinfo', compact('teos', 'kirjoittajat', 'kustantajat','kuva'));
     }
 
     /**
