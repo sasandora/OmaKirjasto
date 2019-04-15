@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\sarja;
 use App\teos;
 use Barryvdh\Debugbar\Facade as Debugbar;
@@ -65,6 +66,9 @@ class SarjaController extends Controller
     public function show($id)
     {
         //
+        $sarja = Sarja::find($id);
+        $teokset = Teos::where('sarjaid',$id)->get();
+        return view('sivut/sarjainfo', compact('sarja', 'teokset'));
     }
 
     /**
@@ -109,7 +113,11 @@ class SarjaController extends Controller
         // Haetaan kirjat
         $teos = Teos::findMany($request->teos);
         // Tehdään merkintä kirjoista sarjassa pivot tauluun
-        $sarja->teos()->attach($teos);
+       //$sarja->teos()->attach($teos);
+        foreach($teos as $t){
+            $t->sarjaid = $id;
+            $t->save();
+        }
 
         return redirect('/sarjat')->with('alert-success', 'Kirjat lisätty');
     }
@@ -123,5 +131,8 @@ class SarjaController extends Controller
     public function destroy($id)
     {
         //
+        $sarja = sarja::find($id);
+        $sarja->delete();
+        return redirect('/sarjat')->with('alert-success', 'sarja poistettu');
     }
 }
