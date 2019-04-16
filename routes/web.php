@@ -11,8 +11,8 @@
 |
 */
 
-Route::view('/', 'sivut/welcome');
-Route::view('tilaukset', 'sivut/welcome');
+Route::view('/', 'sivut/kirjat');
+Route::view('tilaukset', 'sivut/kirjat');
 Route::view('kirjalisays', 'sivut/kirjaLisaysForm');
 Route::view('kirjoittajalisays', 'sivut/kirjoittajaLisaysForm');
 Route::view('kustantajalisays', 'sivut/kustantajaLisaysForm');
