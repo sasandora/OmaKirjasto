@@ -64,7 +64,7 @@ class KauppapaikkaController extends Controller
     {
         //
         $kauppapaikka = kauppapaikka::find($id);
-                return view('sivut/kauppapaikkainfo', compact('kauppapaikka'));
+                return view('sivut/toimituspaikat');
     }
 
     /**

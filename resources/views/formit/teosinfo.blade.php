@@ -17,7 +17,7 @@
         <div class="card-body">
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
-                <img width="20%" src="{{$kuva->url}}">
+                <img max-width="30%" src="{{$kuva->url}}">
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>

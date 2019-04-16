@@ -84,16 +84,8 @@ class TeoksetController extends Controller
         $teos = Teos::find($id);
         $kirjoittajat = Kirjoittaja::find($teos->kirjoittajaid);
         $kustantajat = Kustantaja::find($teos->kustantajaid);
-        $kuva = Kuva::where('kirjaid',$id)->first();
-        if($kirjoittajat->nimi == null){
-            $kirjoittajat->nimi = "tuntematon";
-        }
-        if($kustantajat->nimi == null){
-            $kustantajat->nimi = "tuntematon";
-        }
-        if($kuva->url == null){
-            $kuva->url = "http://res.freestockphotos.biz/pictures/14/14324-illustration-of-a-book-pv.png";
-        }
+        $kuva = Kuva::where('kirjaid',$id)->orderby('created_at','desc')->first();
+
         return view('sivut/teosinfo', compact('teos', 'kirjoittajat', 'kustantajat','kuva'));
     }
 

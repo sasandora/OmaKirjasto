@@ -8,6 +8,7 @@ use App\Teos;
 use App\Sarja;
 use App\Kirjoittaja;
 use App\Kustantaja;
+use App\Kuva;
 
 
 
@@ -60,10 +61,16 @@ class TeosTesti extends TestCase
         $response->assertSee($sarja->nimi);
     }
 
+
     public function testaaTeosUusi()
     {
         $this->withoutMiddleware();
 
+        $kuva = Kuva::create([
+            'url' => "https://s3-eu-west-1.amazonaws.com/bonnier-webshop/app/uploads/2018/05/09143652/9789510433324_frontcover_final-416x596.jpg",
+            'kirjaid' => "1",
+        ]);
+    
         $teos = Teos::create([
             'alkupenimi' => "uusi kirja",
             'suominimi' => "sama suomeksi",
@@ -76,14 +83,14 @@ class TeosTesti extends TestCase
             'kustantajaid' => 1,
             'kirjoittajaid' => 1
         ]);
-        $response = $this->get('/teos');
+        $response = $this->get('/teos/');
         $response->assertStatus(200);
         $response->assertSee($teos->alkupenimi);
     }
     public function testaaTeosUusiYksi()
     {
         $this->withoutMiddleware();
-        $response = $this->get('/teos/1');
+        $response = $this->get('/teos/1/');
         $response->assertStatus(200);
     }
 }

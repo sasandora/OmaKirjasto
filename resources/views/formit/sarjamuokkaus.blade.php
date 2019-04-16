@@ -22,7 +22,7 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Kirjasarjan kuvaus</label>
                     <div class="col-lg-9">
-                        <textarea class="form-control" name="kuvaus" rows="3" value="{{$sarja->kuvaus}}"></textarea>
+                        <input class="form-control" name="kuvaus" rows="3" value="{{$sarja->kuvaus}}">
                     </div>
                 </div>
                 <div class="form-group row">

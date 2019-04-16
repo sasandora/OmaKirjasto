@@ -8,4 +8,9 @@ class kuva extends Model
 {
     //
     protected $table = 'kuva';
+    protected $fillable = [
+        'url',
+        'kirjaid'
+    ];
+
 }
