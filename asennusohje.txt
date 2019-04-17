@@ -1,29 +1,36 @@
-Miten sovellus ajetaan kehitysymp‰ristˆss‰.
+Miten sovellus ajetaan kehitysymp√§rist√∂ss√§.
+---------------------------------------------
 
-Ohjelma k‰ytt‰‰ Laravelia, jonka asennusohjeet lˆytyv‰t myˆs t‰‰lt‰.
+Ohjelma k√§ytt√§√§ Laravelia, jonka asennusohjeet l√∂ytyv√§t my√∂s t√§√§lt√§.
 https://laravel.com/docs/5.8/installation
 
-Alustavasti kannattaa asentaa WAMP, tai oman j‰rjestelm‰n vastaava st‰kki.
-Sen j‰lkeen tulee asentaa Composer, joka toimii paketinhallintaohjelmana Laravelille.
+Alustavasti kannattaa asentaa WAMP, tai oman j√§rjestelm√§n vastaava st√§kki.
+Sen j√§lkeen tulee asentaa Composer, joka toimii paketinhallintaohjelmana Laravelille.
 https://getcomposer.org/
 
-T‰m‰n j‰lkeen menn‰‰n haluttuun hakemistoon ja ladataan Laravelin projekti komennolla:
+T√§m√§n j√§lkeen menn√§√§n haluttuun hakemistoon ja ladataan Laravelin projekti komennolla:
 composer create-project --prefer-dist laravel/laravel omakirjasto
 
-Teht‰v‰n projektin tiedostot siirret‰‰n t‰h‰n kansioon.
+Teht√§v√§n projektin tiedostot siirret√§√§n t√§h√§n kansioon.
 
-MySql:‰‰n tehd‰‰n omakirjasto niminen tietokanta.
-.env tiedostoon kansion juuressa on laitettava tietokannan kirjautumistiedot. Vakiona tietokantaa haetaan localhostista k‰ytt‰j‰nimell‰ root ja tyhj‰ll‰ salasanalla.
+MySql:√§√§n tehd√§√§n omakirjasto niminen tietokanta.
+.env tiedostoon kansion juuressa on laitettava tietokannan kirjautumistiedot. Vakiona tietokantaa haetaan localhostista k√§ytt√§j√§nimell√§ root ja tyhj√§ll√§ salasanalla.
 
-T‰m‰n j‰lkeen avataan konsoli projektin hakemistossa. Komentoriville kirjoitetaan ensin:
+T√§m√§n j√§lkeen avataan konsoli projektin hakemistossa. Komentoriville kirjoitetaan ensin:
+
 php artisan migrate
-Palvelin laitetaan k‰yntiin komennolla:
+
+Palvelin laitetaan k√§yntiin komennolla:
+
  php artisan serve
-T‰m‰n j‰lkeen palvelimen pit‰isi k‰ynnisty‰ localhostissa portissa 8000.
+ 
+T√§m√§n j√§lkeen palvelimen pit√§isi k√§ynnisty√§ localhostissa portissa 8000.
+
 
 Ohjelmasta
-Infosivut eiv‰t v‰ltt‰m‰tt‰ lataudu, jos tietokannasta k‰yt‰v‰t tiedot eiv‰t ole lis‰tty. Esimerkiksi kirjojen infosivu ei aukea ilman kuvaa. Kirjaa lis‰tess‰ kannattaa ensin lis‰t‰ tietokantaan kirjoittaja ja kustantaja.
-Kirjalla ei ole kuin yksi kuva kerrallaan ja vain uusin kuva n‰ytet‰‰n.
+---------------------------------------------
+Infosivut eiv√§t v√§ltt√§m√§tt√§ lataudu, jos tietokannasta k√§yt√§v√§t tiedot eiv√§t ole lis√§tty. Esimerkiksi kirjojen infosivu ei aukea ilman kuvaa. Kirjaa lis√§tess√§ kannattaa ensin lis√§t√§ tietokantaan kirjoittaja ja kustantaja.
+Kirjalla ei ole kuin yksi kuva kerrallaan ja vain uusin kuva n√§ytet√§√§n.
 
 
 
