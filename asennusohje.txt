@@ -1,0 +1,36 @@
+Miten sovellus ajetaan kehitysympäristössä.
+---------------------------------------------
+
+Ohjelma käyttää Laravelia, jonka asennusohjeet löytyvät myös täältä.
+https://laravel.com/docs/5.8/installation
+
+Alustavasti kannattaa asentaa WAMP, tai oman järjestelmän vastaava stäkki.
+Sen jälkeen tulee asentaa Composer, joka toimii paketinhallintaohjelmana Laravelille.
+https://getcomposer.org/
+
+Tämän jälkeen mennään haluttuun hakemistoon ja ladataan Laravelin projekti komennolla:
+composer create-project --prefer-dist laravel/laravel omakirjasto
+
+Tehtävän projektin tiedostot siirretään tähän kansioon.
+
+MySql:ään tehdään omakirjasto niminen tietokanta.
+.env tiedostoon kansion juuressa on laitettava tietokannan kirjautumistiedot. Vakiona tietokantaa haetaan localhostista käyttäjänimellä root ja tyhjällä salasanalla.
+
+Tämän jälkeen avataan konsoli projektin hakemistossa. Komentoriville kirjoitetaan ensin:
+
+php artisan migrate
+
+Palvelin laitetaan käyntiin komennolla:
+
+ php artisan serve
+ 
+Tämän jälkeen palvelimen pitäisi käynnistyä localhostissa portissa 8000.
+
+
+Ohjelmasta
+---------------------------------------------
+Infosivut eivät välttämättä lataudu, jos tietokannasta käytävät tiedot eivät ole lisätty. Esimerkiksi kirjojen infosivu ei aukea ilman kuvaa. Kirjaa lisätessä kannattaa ensin lisätä tietokantaan kirjoittaja ja kustantaja.
+Kirjalla ei ole kuin yksi kuva kerrallaan ja vain uusin kuva näytetään.
+
+
+
