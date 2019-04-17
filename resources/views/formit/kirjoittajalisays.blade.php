@@ -23,13 +23,13 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Nimi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="nimi" type="text" value="Kirjoittajan nimi">
+                        <input class="form-control" name="nimi" type="text" placeholder="Kirjoittajan nimi">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Alias</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="alias" type="text" value="Kirjoittajan vaihtoehtoinen nimi">
+                        <input class="form-control" name="alias" type="text" placeholder="Kirjoittajan vaihtoehtoinen nimi">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -48,7 +48,7 @@
                 <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Syntymäpaikka</label>
                         <div class="col-lg-9">
-                            <input class="form-control" name="syntymapaikka" type="text" value="Kirjoittajan syntymäpaikka">
+                            <input class="form-control" name="syntymapaikka" type="text" placeholder="Kirjoittajan syntymäpaikka">
                         </div>
                 </div>
                 <div class="form-group row">
@@ -60,8 +60,8 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label"></label>
                     <div class="col-lg-9">
-                        <input type="submit" class="btn btn-primary" value="Tallenna">
-                        <input type="button" class="btn btn-secondary onclick="location.href="{{ url('kirjoittajat') }}" value="Peruuta">
+                        <input type="submit" class="btn btn-primary" placeholder="Tallenna">
+                        <input type="button" class="btn btn-secondary onclick="location.href="{{ url('kirjoittajat') }}" placeholder="Peruuta">
                     </div>
                 </div>
             </form>

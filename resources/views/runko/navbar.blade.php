@@ -4,11 +4,6 @@
         <div class="container">
             <ul class="navbar-nav">
                 <div class="row ">
-                    <div class="col d-flex justify-content-center">
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ URL::to('/') }}">Etusivu </a>
-                        </li>
-                    </div>
                     <div class="col">
                         <li class="nav-item">
                             <a class="nav-link {{ Request::is('teos') ? 'active' : '' }}" href="{{ URL::to('/teos') }}">Kirjat</a>
@@ -64,9 +59,6 @@
                 <div class="col d-flex ">
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item ">
-                                <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ URL::to('/') }}">Etusivu </a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ Request::is('teos') ? 'active' : '' }}" href="{{ URL::to('/teos') }}">Kirjat</a>
                             </li>

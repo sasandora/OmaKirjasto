@@ -55,7 +55,7 @@
                 <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Kuvaus</label>
                             <div class="col-lg-9">
-                                <textarea class="form-control" name="kuvaus" rows="3" placeholder="{{$kirjoittaja->kuvaus}}"></textarea>
+                                <textarea class="form-control" name="kuvaus" rows="3" value="{{$kirjoittaja->kuvaus}}"></textarea>
                             </div>
                 </div>
                 <div class="form-group row">

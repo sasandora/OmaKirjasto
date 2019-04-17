@@ -68,7 +68,7 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Postikulut</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="postikulut" type="text" value="postikulut">
+                        <input class="form-control" name="postikulut" type="text" placeholder="postikulut">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -80,7 +80,7 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label"></label>
                     <div class="col-lg-9">
-                        <input type="submit" class="btn btn-primary" value="Tallenna">
+                        <input type="submit" class="btn btn-primary" placeholder="Tallenna">
                         <input type="button" class="btn btn-secondary" onclick="location.href="{{ url('tilaukset') }}"  value="Peruuta">
                     </div>
                 </div>

@@ -24,12 +24,12 @@
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
-                <label class="col-lg-2 col-form-label form-control-label">Perustamisvuosi:</label>
+                <label class="col-lg-2 col-form-label form-control-label">Perustusvuosi:</label>
                 <label class="col-lg-3 col-form-label form-control-label">{{$kustantaja->perustamisvuosi}}</label>
             </div>
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label"></label>
-                <label class="col-lg-2 col-form-label form-control-label">Lopettamisvuosi:</label>
+                <label class="col-lg-2 col-form-label form-control-label">Lopetusvuosi:</label>
                 <label class="col-lg-3 col-form-label form-control-label">{{$kustantaja->lopettamisvuosi}}</label>
             </div>
         </div>

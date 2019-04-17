@@ -4,11 +4,14 @@
 @include('runko/head')
 
 <body>
-    @include('runko/navbar')
-    @include('tayte/carousel')
 
-    @include('tayte/lorem')
 
 </body>
+<script>
+    window.onload = function() {
+    // similar behavior as clicking on a link
+    window.location.href = "{{ action('SarjaController@index') }}";
+}
 
+</script>
 </html>

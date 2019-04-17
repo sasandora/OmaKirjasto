@@ -24,14 +24,14 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Toimituspaikan nimi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="nimi" type="text" value="mistä saa kirjoja tilattua">
+                        <input class="form-control" name="nimi" type="text" placeholder="mistä saa kirjoja tilattua">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label"></label>
                     <div class="col-lg-9">
-                        <input type="submit" class="btn btn-primary" value="Tallenna">
-                        <input type="button" class="btn btn-secondary" onclick="location.href="{{ url('toimituspaikka') }}" value="Peruuta">
+                        <input type="submit" class="btn btn-primary" placeholder="Tallenna">
+                        <input type="button" class="btn btn-secondary" onclick="location.href="{{ url('toimituspaikka') }}" placeholder="Peruuta">
                     </div>
                 </div>
             </form>

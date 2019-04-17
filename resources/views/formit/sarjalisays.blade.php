@@ -15,20 +15,20 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Kirjasarjan nimi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="nimi" type="text" value="joko alkuperäinen tai suomennettu">
+                        <input class="form-control" name="nimi" type="text" placeholder="joko alkuperäinen tai suomennettu">
                     </div>
                 </div>
                 <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Kirjasarjan kuvaus</label>
                         <div class="col-lg-9">
-                            <textarea class="form-control" name="kuvaus" rows="3" placeholder="Kirjoita kuvaus"></textarea>
+                            <input class="form-control" name="kuvaus" rows="3" placeholder="Kirjoita kuvaus">
                         </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label"></label>
                     <div class="col-lg-9">
-                        <input type="submit" class="btn btn-secondary" value="Tallenna">
-                        <input type="button" class="btn btn-primary" onclick="location.href='{{ url('teos') }}'" value="Peruuta">
+                        <input type="submit" class="btn btn-secondary" placeholder="Tallenna">
+                        <input type="button" class="btn btn-primary" onclick="location.href='{{ url('teos') }}'" placeholder="Peruuta">
                     </div>
                 </div>
             </form>

@@ -16,7 +16,9 @@ class Teos extends Model
         'tyyppi',
         'hinta',
         'suomentaja',
-        'sarjaid'
+        'kirjoittajaid',
+        'kustantajaid'
+
     ];
 
     public function sarja()

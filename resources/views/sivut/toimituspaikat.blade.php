@@ -20,7 +20,7 @@
         <div class="row">
 
         <div class="col-sm-12">
-            <a href="/kauppapaikka/{{$kauppapaikka->id}}/" class="card">
+            <a href="#" class="card">
 
                 <h4>{{$kauppapaikka->nimi}}</h3>
 

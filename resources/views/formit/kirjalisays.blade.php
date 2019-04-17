@@ -23,13 +23,13 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Nimi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="suominimi" type="text" value="Sormuksen Ritarit">
+                        <input class="form-control" name="suominimi" type="text" placeholder="Sormuksen Ritarit">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Alkuperäinen nimi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="alkupenimi" type="text" value="The Fellowship of the Ring">
+                        <input class="form-control" name="alkupenimi" type="text" placeholder="The Fellowship of the Ring">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -91,25 +91,25 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Hinta (€)</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="hinta" type="text" value="10">
+                        <input class="form-control" name="hinta" type="text" placeholder="10">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Suomentaja</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="suomentaja" type="text" value="nimi">
+                        <input class="form-control" name="suomentaja" type="text" placeholder="nimi">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Julkaisuvuosi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="vuosi" type="text" value="vuosiluku">
+                        <input class="form-control" name="vuosi" type="text" placeholder="vuosiluku">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Kuvittaja</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="kuvittaja" type="text" value="kuvittaja">
+                        <input class="form-control" name="kuvittaja" type="text" placeholder="kuvittaja">
                     </div>
                 </div>
                 <div class="form-group row">

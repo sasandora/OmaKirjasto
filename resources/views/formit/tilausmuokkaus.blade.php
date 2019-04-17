@@ -16,7 +16,7 @@
     <!-- form toimittaja info -->
     <div class="card card-outline-secondary">
         <div class="card-header">
-            <h3 class="mb-0">Lisää tilaus</h3>
+            <h3 class="mb-0">Muokkaa tilausta</h3>
         </div>
         <div class="card-body">
             <form action="/tilaukset/{{$toimitus->id}}" method="POST">
@@ -61,7 +61,7 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Postikulut</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="postikulut" type="text" value="postikulut" value="{{$toimitus->postikulut}}">
+                        <input class="form-control" name="postikulut" type="text" value="{{$toimitus->postikulut}}">
                     </div>
                 </div>
                 <div class="form-group row">

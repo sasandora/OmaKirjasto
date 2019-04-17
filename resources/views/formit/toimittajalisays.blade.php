@@ -24,38 +24,38 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Nimimerkki</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="nimimerkki"  type="text" value="Toimittajan nimimerkki">
+                        <input class="form-control" name="nimimerkki"  type="text" placeholder="Toimittajan nimimerkki">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Oikea nimi</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="myyjannimi" type="text" value="Toimittajan nimi">
+                        <input class="form-control" name="myyjannimi" type="text" placeholder="Toimittajan nimi">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Osoite</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="osoite" type="text" value="Toimittajan osoite">
+                        <input class="form-control" name="osoite" type="text" placeholder="Toimittajan osoite">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Puhelinnumero</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="puhelin" type="text" value="Toimittajan puhelin">
+                        <input class="form-control" name="puhelin" type="text" placeholder="Toimittajan puhelin">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Toimittajan sähköposti</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="email" type="text" value="Toimittajan sposti">
+                        <input class="form-control" name="email" type="text" placeholder="Toimittajan sposti">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label"></label>
                     <div class="col-lg-9">
-                        <input type="submit" class="btn btn-primary" value="Tallenna">
-                        <input type="button" class="btn btn-secondary" onclick="location.href="{{ url('toimittajat') }}" value="Peruuta">
+                        <input type="submit" class="btn btn-primary" placeholder="Tallenna">
+                        <input type="button" class="btn btn-secondary" onclick="location.href="{{ url('toimittajat') }}" placeholder="Peruuta">
                     </div>
                 </div>
             </form>
